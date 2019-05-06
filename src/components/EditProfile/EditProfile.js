@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import styles from './EditProfile.module.scss';
 import { connect } from 'react-redux';
-import { edit, getsession, login } from '../../Ducks/UserAuth';
+import { edit, getsession, login, deactivate } from '../../Ducks/UserAuth';
 
 
 class EditProfile extends Component{
@@ -28,12 +28,20 @@ componentDidMount() {
 }
 
 edit(e) {
-    e.preventDefault()
+    e.preventDefault();
 
     const session = this.props.auth.username;
     const {username, name, age, bio, email, city, state, zip, img, password} = this.state;
     this.props.edit(session, username, name, age, bio, email, city, state, zip, img);
     this.props.login(username, password);
+}
+
+deactivate(e) {
+    console.log('deactivate in editprofile')
+    e.preventDefault();
+
+    console.log(this.props.auth.username, this.state.password)
+    this.props.deactivate(this.props.auth.username, this.state.password);
 }
 
 
@@ -58,6 +66,9 @@ render() {
                 </form>  
             </section>
             <Link to="/"><button>Home</button></Link>
+            <section className={styles.deactivate_account_space}>
+                <button onClick={e => this.deactivate(e)}>Deactivate</button>
+            </section>
         </div>
     )
 }
@@ -65,4 +76,4 @@ render() {
 
 const mapStateToProps = reduxState => reduxState;
 
-export default connect(mapStateToProps, { edit, getsession, login })(EditProfile);
+export default connect(mapStateToProps, { edit, getsession, login, deactivate })(EditProfile);

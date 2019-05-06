@@ -46,16 +46,17 @@ class Welcome extends Component{
         return (
             <div>
                 <section className={styles.explanation_box_section}>
+                <div className={styles.explanation_box_section_opacity}>
                     <section className={styles.input_stretch}>
-                        <div className={styles.lunchbuddy_div}>
-                        <h1>LUNCH BUDDY!</h1>
-                        </div>
-                        <div className={styles.login_div}>
+                        <div className={styles.login_box_space}>
+                        <div className={styles.login_box}>
                         <input placeholder="username here:" onChange={(e) => this.setState({username: e.target.value})}/>
                         <input placeholder="password here:" onChange={(e) => this.setState({password: e.target.value})} type="password"/>
                         <button className={styles.login_button} onClick={e => this.login(e)}>Login</button>
                         <button className={styles.logout_button} onClick={e => this.logout(e)}>Logout</button>
                         </div>
+                        </div>
+                    
                     </section>
                         <div className={styles.explanation_box_div}>
                             <div className={styles.explanation_text_box}>
@@ -66,6 +67,7 @@ class Welcome extends Component{
                                 <img height="150px" width="150px" src="https://i.pinimg.com/originals/4f/eb/74/4feb745209cf7aba57463b20d27b61e3.png"/>
                                 <Link to="/Register"><button>Register</button></Link>
                             </div>
+                        </div>
                         </div>
                     </section>
                     <section className={styles.welcome_info}>

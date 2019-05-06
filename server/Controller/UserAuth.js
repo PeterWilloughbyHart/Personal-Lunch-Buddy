@@ -29,7 +29,23 @@ const edit = async (req, res) => {
     });   
 }
 
+// DEACTIVATE //
+const deactivate = async (req, res) => {
+    const db = req.app.get("db");
+    const {username, password} = req.body;
+    console.log(username, password)
 
+    const results = await db.login(username);
+    if(results[0]) {
+        const isMatch = await bcrypt.compare(
+            password,
+            results[0].password
+        );
+        if (isMatch) {
+            db.remove_account(login);
+        }
+    }
+}
 
 // LOGIN //
 
@@ -91,5 +107,6 @@ module.exports = {
     edit,
     login,
     logout,
-    getsession
+    getsession,
+    deactivate
 }

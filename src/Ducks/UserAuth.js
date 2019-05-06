@@ -18,6 +18,7 @@ const initialState = {
 const SIGN_UP = "SIGN_UP";
 const EDIT_PROFILE = "EDIT_PROFILE";
 const LOGIN = "LOGIN";
+const DEACTIVATE_ACCOUNT = "DEACTIVATE_ACCOUNT"
 const LOGOUT = "LOGOUT";
 const GETSESSION = "GETSESSION";
 
@@ -31,6 +32,14 @@ export function signup(username, password, name, age, bio, email, city, state, z
     }
 }
 
+export function login(username, password) {
+    console.log('login, ducks.')
+    return {
+        type: LOGIN,
+        payload: axios.post("/auth/login", {username, password})
+    }
+}
+
 export function edit(session, username, name, age, bio, email, city, state, zip, img) {
     console.log("hit on edit in ducks");
     return {
@@ -39,13 +48,14 @@ export function edit(session, username, name, age, bio, email, city, state, zip,
     }
 }
 
-export function login(username, password) {
-    console.log('login, ducks.')
+export function deactivate(username, password) {
+    console.log(username, password);
     return {
-        type: LOGIN,
-        payload: axios.post("/auth/login", {username, password})
+        type: DEACTIVATE_ACCOUNT,
+        payload: axios.delete("/auth/deactivate", {username, password})
     }
 }
+
 
 export function logout() {
     return {
@@ -84,6 +94,25 @@ export default function reducer(state=initialState, action) {
             zip: payload.data.zip,
             img: payload.data.img
         }
+        case EDIT_PROFILE + "_FULFILLED":
+        return {
+            ...state, 
+            username: payload.data.username // put this back
+        }
+        case DEACTIVATE_ACCOUNT + "_FULFILLED":
+        return {
+            ...state,
+            username: "",
+            password: "",
+            name: "",
+            age: "",
+            bio: "",
+            email: "",
+            city: "",
+            state: "",
+            zip: "",
+            img: ""
+        }
         case LOGOUT + "_FULFILLED":
         return {
             ...state, 
@@ -111,11 +140,6 @@ export default function reducer(state=initialState, action) {
             state: payload.data.state,
             zip: payload.data.zip,
             img: payload.data.img
-        }
-        case EDIT_PROFILE + "_FULFILLED":
-        return {
-            ...state, 
-            username: payload.data.username // put this back
         }
         default: 
         return state;

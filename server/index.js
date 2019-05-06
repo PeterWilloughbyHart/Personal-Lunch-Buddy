@@ -4,7 +4,7 @@ const express = require('express');
 const session = require('express-session');
 const app = express();
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
-const { signup, edit, login, logout, getsession } = require('./Controller/UserAuth');
+const { signup, edit, login, logout, getsession, deactivate} = require('./Controller/UserAuth');
 
 app.use(express.json());
 
@@ -20,8 +20,9 @@ massive(CONNECTION_STRING).then(db => {
 
 // User Auth //
 app.post('/auth/signup', signup);
-app.put('/auth/edit', edit)
 app.post('/auth/login', login);
+app.put('/auth/edit', edit);
+app.delete('/auth/deactivate', deactivate);
 app.get('/auth/logout', logout);
 app.get('/auth/cookie', getsession);
 

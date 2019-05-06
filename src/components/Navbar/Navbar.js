@@ -19,17 +19,24 @@ logout(e) {
 
 render() {
     return(
+        <div>
         <nav className={styles.welcome}>
             <div className={styles.logo}>
-                <img src="https://cdn.clipart.email/e50c4d360c61095951169f18e2966fca_28-collection-of-lunch-clipart-transparent-background-high-_372-590.png"/>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKO7N15yCr44wAfgwGZd5A84h4wAUGsL1BtidAaA4UyjOemPLPVw"/>
                 <h1>LunchBuddy</h1> 
             </div>
             <div className={styles.profile}>
                 <h5>{this.props.auth.name}</h5>
-                <Link to="/EditProfile"><img height="64px" width="64px" src={this.props.auth.img}/></Link>
+                {this.props.auth.username ? (
+                <Link to="/EditProfile"><img height="52px" width="52px" src={this.props.auth.img}/></Link>) : (<Link to="/EditProfile"><img height="50px" width="50px" src="https://img.icons8.com/windows/64/000000/user.png"/></Link>)}
                 <button className={styles.logout_button} onClick={e => this.logout(e)}>Logout</button>
             </div>
         </nav>
+        <div className={styles.container}>
+        <div className={styles.left_wall}/>
+        <div className={styles.right_wall}/>
+        </div>
+        </div>
     )
 }
 }

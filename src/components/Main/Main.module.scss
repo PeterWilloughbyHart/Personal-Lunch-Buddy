@@ -2,13 +2,15 @@
     background-image: url('http://pluspng.com/img-png/burger-hd-png-burgers-fries-other-good-stuff-1134.png'), url('http://www.pngall.com/wp-content/uploads/2016/05/Salad-PNG-Clipart.png'), url('http://southgardenrest.com/communities/1/000/001/791/701//images/10944341.png');
     background-position: top left, center right, bottom left;
     background-repeat: no-repeat;
+    background-color: rgb(233, 252, 233);
+    width: 90%;
+    margin-left: 5%;
     height: 200vh;
-    background-color: rgb(223, 183, 41);
 }
 
 .makematch_space {
-    width: 100%;
     // border: 2px solid black;
+    width: 90%;
     height: 70vh;
     display: flex;
     justify-content: flex-start;
@@ -19,7 +21,9 @@
 .makematch {
     height: 70%;
     width: 45%;
-    background-color: rgba(0, 0, 0, 0.883);
+    background-color: rgb(25, 24, 26);
+    border: 1px solid white;
+    box-shadow: -5px 5px 10px black;
     display: flex;
     flex-direction: row;
 
