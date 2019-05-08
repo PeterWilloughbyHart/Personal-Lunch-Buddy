@@ -8,6 +8,10 @@ import { connect } from 'react-redux';
 class Navbar extends Component {
     constructor(props){
         super(props)
+        
+        this.state = {
+            dropdown: "shut"
+        }
     }
 
 logout(e) {
@@ -16,6 +20,13 @@ logout(e) {
         this.props.logout().catch(err => console.log(err));
         this.props.getsession();
     }
+
+dropdown() {
+    if(this.state.dropdown === "shut") {
+        this.setState({dropdown: "open"})
+    }
+    else {this.setState({dropdown: "shut"})}
+}
 
 render() {
     return(
@@ -26,15 +37,16 @@ render() {
                 <h1>LunchBuddy</h1> 
             </div>
             <div className={styles.profile}>
+                {this.props.auth.username ? ( 
+                <div className={styles.profile}>
                 <h5>{this.props.auth.name}</h5>
-                {this.props.auth.username ? (
-                <Link to="/EditProfile"><img height="52px" width="52px" src={this.props.auth.img}/></Link>) : (<Link to="/EditProfile"><img height="50px" width="50px" src="https://img.icons8.com/windows/64/000000/user.png"/></Link>)}
-                <button className={styles.logout_button} onClick={e => this.logout(e)}>Logout</button>
+                <Link to="/EditProfile"><img onClick={e => this.dropdown()}height="52px" width="52px" src={this.props.auth.img}/></Link>
+                <button className={styles.logout_button} onClick={e => this.logout(e)}>Logout</button></div>) : 
+                (<Link to="/EditProfile"><img height="50px" width="50px" src="https://img.icons8.com/windows/64/000000/user.png"/></Link>)}
             </div>
         </nav>
-        <div className={styles.container}>
-        <div className={styles.left_wall}/>
-        <div className={styles.right_wall}/>
+        <div className={`styles.drop_${this.state.dropdown}`}>
+
         </div>
         </div>
     )

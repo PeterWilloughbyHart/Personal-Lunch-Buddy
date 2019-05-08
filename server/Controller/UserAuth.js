@@ -33,7 +33,7 @@ const edit = async (req, res) => {
 const deactivate = async (req, res) => {
     const db = req.app.get("db");
     const {username, password} = req.body;
-    console.log(username, password)
+    console.log("username:", username, "password:", password)
 
     const results = await db.login(username);
     if(results[0]) {

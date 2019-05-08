@@ -57,9 +57,9 @@ class RegisterUser extends Component{
                     <input placeholder="profile url" onChange={(e) => this.setState({img: e.target.value})}></input>
                     <button onClick={(e) => this.submit(e)}> Submit </button>
                 </form>
-                <section className={styles.waitress}>
+                {/* <section className={styles.waitress}>
                 <img src="https://i.dlpng.com/static/png/214099_thumb.png"/>
-                </section>
+                </section> */}
                 </section>
             </div>
         )

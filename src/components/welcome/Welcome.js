@@ -45,9 +45,15 @@ class Welcome extends Component{
         }
         return (
             <div>
+                <section className={styles.welcome_page_top}>
+
+                </section>
                 <section className={styles.explanation_box_section}>
                 <div className={styles.explanation_box_section_opacity}>
                     <section className={styles.input_stretch}>
+                    <div className={styles.tagline_space}>
+                        <h1>Talk While You Chew</h1>
+                    </div>
                         <div className={styles.login_box_space}>
                         <div className={styles.login_box}>
                         <input placeholder="username here:" onChange={(e) => this.setState({username: e.target.value})}/>

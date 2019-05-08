@@ -1,34 +1,73 @@
 
 
 .edit_space {
-    margin-top: 50px;
     border: 2px solid black;
-    height: 60vh;
-    width: 100%;
+    background-image: url('https://images.unsplash.com/photo-1501420896719-ad7fe0ee297e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60');
+    background-size: 100% 100%;
+    height: 90vh;
+    width: 90%;
+    margin-left: 5%;
     display: flex;
     justify-content: center;
     align-content: center;
     
-    .edit {
+.edit {
     border: 2px solid black;
-    background-color: forestgreen;
-    width: 50%;
+    background-color: rgba(102, 102, 102, 0);
+    margin-top: 1.75%;
+    width: 30%;
+    height: 95%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
 input {
-    width: 70%;
-    margin-top: 10px;
-    color: white;
-    background-color: transparent;
+    width: 90%;
+    height: 10%;
+    margin-top: 8px;
+    color: rgb(0, 0, 0);
+    background-color: white;
     border: none;
-    border-bottom: 2px solid black;
+    border: 2px solid black;
+    border-radius: 5%/50%;
+    padding-left: 10px;
+}
 
-    &::placeholder {
+#bio {
+    width: 95%;
+    height: 30%;
+    margin-top: 8px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border: none;
+    border: 2px solid black;
+    border-radius: 12%/50%;
+    resize: none;
+}
+
+button {
+    margin-top: 5px;
+}
+
+h4 {
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+}
+}
+
+.deactivate_account_space {
+    display: flex;
+    justify-content: center;
+
+    button {
+        height: 50px;
+        width: 100px;
+        background-color: black;
         color: white;
     }
 }
-}
-}
+

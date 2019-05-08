@@ -5,6 +5,7 @@ const session = require('express-session');
 const app = express();
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
 const { signup, edit, login, logout, getsession, deactivate} = require('./Controller/UserAuth');
+const { storelocation } = require('./Controller/mapscontroller')
 
 app.use(express.json());
 
@@ -25,6 +26,9 @@ app.put('/auth/edit', edit);
 app.delete('/auth/deactivate', deactivate);
 app.get('/auth/logout', logout);
 app.get('/auth/cookie', getsession);
+
+// User Location //
+app.post('/api/location', storelocation);
 
 app.listen(SERVER_PORT, () => console.log('mic check one two'));
 

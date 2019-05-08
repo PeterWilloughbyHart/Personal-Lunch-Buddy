@@ -1,6 +1,7 @@
 body {
     margin: 0; // removes margin around whole site body
-    background-color: rgb(19, 19, 19);
+    background-color: rgb(231, 235, 255);
+    scroll-behavior: smooth;
     // background-color: rgb(68, 68, 68);
 }
 
@@ -62,6 +63,9 @@ body {
         box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.514);
         background-color: gold;
     }
+    button:hover {
+        box-shadow: none;
+    }
 
     img {
     margin-right: 15px;
@@ -74,4 +78,10 @@ body {
     margin-right: 10px;
     }
     }
+}
+
+.drop_shut {
+    height: 20vh;
+    width: 20vw;
+    background-color: white;
 }

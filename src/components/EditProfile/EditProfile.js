@@ -51,18 +51,18 @@ render() {
         <div>
             <section className={styles.edit_space}>
                 <form className={styles.edit}>
-                    <input placeholder={username} onChange={(e) => this.setState({username: e.target.value})}></input>
-                    <input placeholder={name} onChange={(e) => this.setState({name: e.target.value})}></input>
-                    <input placeholder={age} onChange={(e) => this.setState({age: e.target.value})}></input>
-                    <input placeholder={bio} onChange={(e) => this.setState({bio: e.target.value})}></input>
-                    <input placeholder={email} onChange={(e) => this.setState({email: e.target.value})}></input>
-                    <input placeholder={city} onChange={(e) => this.setState({city: e.target.value})}></input>
-                    <input placeholder={state} onChange={(e) => this.setState({state: e.target.value})}></input>
-                    <input placeholder={zip} onChange={(e) => this.setState({zip: e.target.value})}></input>
-                    <input placeholder="profile url" onChange={(e) => this.setState({img: e.target.value})}></input>
+                    <input value={username} onChange={(e) => this.setState({username: e.target.value})}></input>
+                    <input value={name} onChange={(e) => this.setState({name: e.target.value})}></input>
+                    <input value={age} onChange={(e) => this.setState({age: e.target.value})}></input>
+                    <textarea maxlength="150" id={styles.bio} value={bio} onChange={(e) => this.setState({bio: e.target.value})}></textarea>
+                    <input value={email} onChange={(e) => this.setState({email: e.target.value})}></input>
+                    <input value={city} onChange={(e) => this.setState({city: e.target.value})}></input>
+                    <input value={state} onChange={(e) => this.setState({state: e.target.value})}></input>
+                    <input value={zip} onChange={(e) => this.setState({zip: e.target.value})}></input>
+                    <input value="profile url" onChange={(e) => this.setState({img: e.target.value})}></input>
                     <h4>please enter password for security</h4>
                     <input placeholder="password" onChange={(e) => this.setState({password: e.target.value})}/>
-                    <button onClick={e => this.edit(e)}>Submit</button>
+                    <button onClick={e => this.edit(e)}>Save</button>
                 </form>  
             </section>
             <Link to="/"><button>Home</button></Link>
