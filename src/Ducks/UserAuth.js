@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const initialState = {
+    id: "",
     username: "",
     password: "",
     name: "",
@@ -48,11 +49,11 @@ export function edit(session, username, name, age, bio, email, city, state, zip,
     }
 }
 
-export function deactivate(username, password) {
-    console.log(username, password);
+export function deactivate(username) {
+    console.log(username);
     return {
         type: DEACTIVATE_ACCOUNT,
-        payload: axios.delete("/auth/deactivate", {username, password})
+        payload: axios.delete(`/auth/deactivate/${username}`)
     }
 }
 
@@ -78,11 +79,14 @@ export default function reducer(state=initialState, action) {
     switch (type) {
         case SIGN_UP + "_FULFILLED":
         return {
-            ...state, username: payload.data.username
+            ...state, 
+            id: payload.data.id,
+            username: payload.data.username
         }
         case LOGIN + "_FULFILLED":
         return {
             ...state, 
+            id: payload.data.id,
             username: payload.data.username,  // Set this whole object to a variable so you can call it with a word
             password: payload.data.password,
             name: payload.data.name,

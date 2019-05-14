@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
-import { signup, login } from '../../Ducks/UserAuth';
+import { signup, login, getsession } from '../../Ducks/UserAuth';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import styles from './RegisterUser.module.scss';
+import Axios from 'axios';
 
+const {REACT_APP_KEY} = process.env;
 
 class RegisterUser extends Component{
     constructor(props){
@@ -23,7 +25,9 @@ class RegisterUser extends Component{
         }
     }
 
-    
+    componentDidMount() {
+        this.props.getsession()
+    }
 
     submit(e) {
         e.preventDefault();
@@ -31,7 +35,6 @@ class RegisterUser extends Component{
 
         const {username, password, name, age, bio, email, city, state, zip, img} = this.state;
         this.props.signup(username, password, name, age, bio, email, city, state, zip, img);
-        this.props.login(username, password);
     }
 
     render() {
@@ -43,10 +46,11 @@ class RegisterUser extends Component{
         return(
             <div>
                 <section className={styles.registry_section}>
+                <section className={styles.top_container}>
                 <form className={styles.registry_form}>
                 <h1>Register with LunchBuddy!</h1>
-                    <input placeholder="username" onChange={(e) => this.setState({username: e.target.value})}></input>
-                    <input placeholder="password" onChange={(e) => this.setState({password: e.target.value})}></input>
+                    <input autocomplete="off" placeholder="username" onChange={(e) => this.setState({username: e.target.value})}></input>
+                    <input type="password" placeholder="password" onChange={(e) => this.setState({password: e.target.value})}></input>
                     <input placeholder="name" onChange={(e) => this.setState({name: e.target.value})}></input>
                     <input placeholder="age" onChange={(e) => this.setState({age: e.target.value})}></input>
                     <input placeholder="bio" onChange={(e) => this.setState({bio: e.target.value})}></input>
@@ -57,9 +61,22 @@ class RegisterUser extends Component{
                     <input placeholder="profile url" onChange={(e) => this.setState({img: e.target.value})}></input>
                     <button onClick={(e) => this.submit(e)}> Submit </button>
                 </form>
-                {/* <section className={styles.waitress}>
-                <img src="https://i.dlpng.com/static/png/214099_thumb.png"/>
-                </section> */}
+                <div className={styles.top_container_right}>
+                <div className={styles.top_container_right_image}></div>
+                <div className={styles.top_container_right_text}><h1>Find Your Favorites</h1></div>
+                </div>
+                </section>
+                <div className={styles.right_of_form}></div>
+                <section className={styles.registry_images}>
+                    <div className={styles.left}>
+                    <div className={styles.bottom_left}></div> 
+                    <div className={styles.top_left}></div>
+                    </div>
+                    <div className={styles.right}>
+                    <div className={styles.top_right}></div>
+                    <div className={styles.bottom_right}><h3>LunchBuddy™</h3></div>
+                    </div>
+                </section>
                 </section>
             </div>
         )
@@ -68,6 +85,6 @@ class RegisterUser extends Component{
 
 const mapStateToProps = reduxState => reduxState;
 
-export default connect(mapStateToProps, { signup, login })(RegisterUser);
+export default connect(mapStateToProps, { signup, login, getsession })(RegisterUser);
 
 // export default RegisterUser;

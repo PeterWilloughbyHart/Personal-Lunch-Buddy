@@ -6,6 +6,10 @@ const app = express();
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env;
 const { signup, edit, login, logout, getsession, deactivate} = require('./Controller/UserAuth');
 const { storelocation } = require('./Controller/mapscontroller')
+const { sendEmail } = require('./Controller/nodemailercontroller')
+
+// Droplet Stuff //
+app.use( express.static( `${__dirname}/../build` ) );
 
 app.use(express.json());
 
@@ -19,11 +23,12 @@ massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
 })
 
+
 // User Auth //
-app.post('/auth/signup', signup);
+app.post('/auth/signup', signup, sendEmail, login);
 app.post('/auth/login', login);
 app.put('/auth/edit', edit);
-app.delete('/auth/deactivate', deactivate);
+app.delete('/auth/deactivate/:id', deactivate);
 app.get('/auth/logout', logout);
 app.get('/auth/cookie', getsession);
 

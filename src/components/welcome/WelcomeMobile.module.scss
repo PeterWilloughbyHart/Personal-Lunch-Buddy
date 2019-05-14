@@ -1,0 +1,258 @@
+
+
+@media (max-width: 960px) {
+
+    .input_stretch {
+            width: 100%;
+            height: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: 2px solid black;
+    
+    .tagline_space {
+            margin-left: 20%;
+            // border-radius: 15%/50%;
+            border: .5px solid black;
+            box-shadow: -2px 2px 5px black;
+            background: rgba(0, 0, 0, 0.397);
+            width: 40%;
+            height: 30%;
+            text-align: center;
+        
+    h1  {
+             font-size: 25px;
+             color: gold;
+        }
+    }
+        
+    .login_box_space {
+        width: 60%;
+        height: 10vh;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;;
+        justify-content: center;
+        border: 2px solid black;
+        
+    .login_box {
+        width: 90%;
+        height: 90%;
+        padding: 5px;
+        border-radius: 8%/50%;
+        // border: .5px solid rgba(0, 0, 0, 0.548);
+        // border-right: .5px solid rgba(0, 0, 0, 0.548);
+        // box-shadow: -2px 2px 5px black;
+        // background-color: rgba(16, 16, 19, 0.274);
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        align-items: center;;
+        justify-content: center;
+        }
+        
+    input {
+        margin-left: 10px;
+        width: 25%;
+        border-radius: 10%/50%;
+        text-align: center;
+        padding: 6px;
+        border: 1px solid rgb(192, 192, 192);
+        }
+        
+    button {
+        border: none;
+        color: white;
+        border-radius: 100%;
+        width: 13%;
+        height: 90%;
+        padding: 5px;
+        margin-left: 20px;
+        box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.514);
+        }
+        
+    button:hover {
+            box-shadow: none;
+        }
+        
+    .login_button {
+        background-color: gold;
+        }  
+        
+    .logout_button {
+        background-color: rgb(43, 2, 2);
+    }  
+    }
+    }
+
+    .explanation_box_section {
+        margin-left: 5%;
+        height: 100vh;
+        width: 90%;
+        background-image: url("https://thespoon.tech/wp-content/uploads/2018/06/relishapp_2.jpg");
+        background-size: 100% 100%;
+       }
+       
+       .explanation_box_section_opacity {
+       //border: 2px solid red;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       flex-direction: column;
+       width: 100%;
+       height: 100%;
+       background-color: rgba(0, 0, 0, 0.342);
+       background-size: auto;
+       }
+       
+       .explanation_box_div {
+           background-color: rgba(9, 19, 22, 0);
+           height: 60%;
+           width: 100%;
+           margin-top: 10px;
+           display: flex; 
+           justify-content: center;
+           flex-direction: row;
+           align-items: center;
+           // margin-bottom: 5%;
+           // border: 2px solid red;
+       }
+       
+       .explanation_text_box {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           color: white;
+           // border: 2px solid white;
+           height: 75%;
+           width: 55%;
+           background-color: rgb(9, 19, 22);
+           box-shadow: -5px 5px 5px black;
+           // border-right: .5px solid rgba(0, 0, 0, 0.548);
+           // box-shadow: -5px 5px 5px black;
+           // background-color: rgba(0, 0, 0, 0.329);
+           
+           h1 {
+               font-size: 30px;
+               color: white;
+           }
+           
+           p {
+               font-size: 20px;
+               color: white;
+           }
+       }
+       
+       .register_button_box {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           // border: 1px solid white;
+           height: 45%;
+           width: 25%;
+           margin-left: 5%;
+           background-color: rgb(9, 19, 22);
+           box-shadow: -5px 5px 5px black;
+           // border-right: .5px solid rgba(0, 0, 0, 0.548);
+           // box-shadow: -5px 5px 5px black;
+           // background-color: rgba(0, 0, 0, 0.329);
+           
+           button {
+               margin-top: 10px;
+               padding: 5px;
+               width: 80px;
+               height: 35px;
+               font-size: 15px;
+               background-color: orangered;
+               box-shadow: -2px 2px 2px black;
+               border: none;
+           }
+       }
+       
+       button:hover {
+           background-color: rgb(167, 44, 0);
+           color: white;
+           box-shadow: none;
+       }
+       
+       
+       .welcome_info {
+           // border: 2px solid red;
+           display: flex;
+           align-items: center;
+           flex-direction: row;
+           height: 100vh;
+           width: 90%;
+           margin-left: 5%;
+           // border-top: 2px solid orangered;
+           background-color: rgba(253, 255, 236, 0.883);
+       
+           .pizza_box_space {
+           // border: 2px solid black;
+           height: 100%;
+           width: 50%;
+       
+           .pizza_box {
+           width: 100%;
+           height: 50%;
+           display: flex;
+           align-items: center;
+           // justify-content: center;
+       
+           img {
+           // border: 2px solid black;
+           background: none;
+           height: 500px;
+           width: 500px;
+           margin-top: 40px;
+           }
+       
+           p {
+           color: black;
+           font-size: 25px;
+           position: absolute;
+           z-index: 2;
+           margin-left: 400px;
+           }
+           }
+           }
+           
+           .salad_box_space {
+           // border: 2px solid black;
+           height: 100%;
+           width: 50%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+       
+           .salad_box {
+           // border: 2px solid black;
+           width: 100%;
+           height: 50%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+       
+           img {
+           height: 50px;
+           width: 50px;
+       
+           }
+       
+           p {
+           color: white;
+           margin-right: 10px;
+           }
+           }
+           }  
+       }
+       
+       .footer {
+           background-color: rgb(208, 208, 221);
+           height: 20vh;
+           width: 90%;
+           margin-left: 5%;
+       }
+    }

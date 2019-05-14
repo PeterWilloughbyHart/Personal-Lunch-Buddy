@@ -22,8 +22,8 @@ justify-content: center;
 .tagline_space {
     margin-right: 20%;
     border-radius: 15%/50%;
-    border: .5px solid black;
-    box-shadow: -2px 2px 5px black;
+    // border: .5px solid black;
+    // box-shadow: -2px 2px 5px black;
     background: rgba(0, 0, 0, 0.397);
     width: 30%;
     text-align: center;
@@ -107,7 +107,7 @@ align-items: center;
 flex-direction: column;
 width: 100%;
 height: 100%;
-background-color: rgba(0, 0, 0, 0.342);
+background-color: rgba(2, 2, 2, 0.616);
 background-size: auto;
 }
 
@@ -259,3 +259,5 @@ button:hover {
     width: 90%;
     margin-left: 5%;
 }
+
+@import './WelcomeMobile.module.scss';

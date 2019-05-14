@@ -2,19 +2,23 @@ const bcrypt = require('bcryptjs')
 
 // REGISTER //
 
-const signup = async (req, res) => {
+const signup = async (req, res, next) => {
     const db = req.app.get("db");
-    const { username, password, name, age, bio, email, city, state, zip, img } = req.body;
+    const { username, password, name, age, bio, email, city, state, zip, img} = req.body;
     const hash = await bcrypt.hash(password, 10);
     
-    const result = db.signup([username, hash, name, age, bio, email, city, state, zip, img]).catch(err => {
-        res.status(400).json("username already exist");  
+    const results = db.signup([username, hash, name, age, bio, email, city, state, zip, img]).catch(err => {
+        req.session.user = {
+            id: results[0].id,
+            username: results[0].username }
+        res.json(req.session.user)
     });
-    
-    // req.session.user = { username: result[0].username };
-    // res.json({ username: result[0].username }); 
+    next()
 };
 
+// req.session.user = { username: result[0].username };
+// res.json({ username: result[0].username }); 
+    
 // EDIT //
 
 const edit = async (req, res) => {
@@ -32,24 +36,15 @@ const edit = async (req, res) => {
 // DEACTIVATE //
 const deactivate = async (req, res) => {
     const db = req.app.get("db");
-    const {username, password} = req.body;
-    console.log("username:", username, "password:", password)
+    console.log("hey:", req.params.id)
 
-    const results = await db.login(username);
-    if(results[0]) {
-        const isMatch = await bcrypt.compare(
-            password,
-            results[0].password
-        );
-        if (isMatch) {
-            db.remove_account(login);
-        }
-    }
+    const result = await db.remove_account(req.params.id);
+    res.json(result)
 }
 
 // LOGIN //
 
-const login = async (req, res) => {
+const login = async (req, res, next) => {
     console.log('hit on login in controller')
     const db = req.app.get("db");
     const { password, username } = req.body;
@@ -62,6 +57,7 @@ const login = async (req, res) => {
         );
         if(isMatch) {
             req.session.user = {
+                id: results[0].id,
                 username: results[0].username,
                 password: results[0].password,
                 name: results[0].name,
@@ -80,6 +76,7 @@ const login = async (req, res) => {
             res.status(403).json('Wrong Login Info')
         }
     }
+    next()
 }
 
 // Keep session on refresh //

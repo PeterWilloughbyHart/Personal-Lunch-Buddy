@@ -26,8 +26,8 @@ class Welcome extends Component{
         
         const { username, password } = this.state;
         this.props.login(username, password)
-        .catch(err => console.log(err));
-        this.props.getsession();
+        .catch(err => console.log(err))
+        .then(this.props.getsession());
     }
 
     logout(e) {
@@ -38,16 +38,13 @@ class Welcome extends Component{
     }
 
     render() {
-        if(this.props.auth.name){
+        if(this.props.auth.username){
             return (
                 <Redirect to="/Main"/> // if there is a user, redirect to main page
             )
         }
         return (
             <div>
-                <section className={styles.welcome_page_top}>
-
-                </section>
                 <section className={styles.explanation_box_section}>
                 <div className={styles.explanation_box_section_opacity}>
                     <section className={styles.input_stretch}>
@@ -66,8 +63,8 @@ class Welcome extends Component{
                     </section>
                         <div className={styles.explanation_box_div}>
                             <div className={styles.explanation_text_box}>
-                                <h1>Explanation</h1>
-                                <p>get lunch with a friend</p>
+                                <h1>How We're Here for You</h1>
+                                <p>We help you make lunch more fun, and more about your community</p>
                             </div>
                             <div className={styles.register_button_box}>
                                 <img height="150px" width="150px" src="https://i.pinimg.com/originals/4f/eb/74/4feb745209cf7aba57463b20d27b61e3.png"/>

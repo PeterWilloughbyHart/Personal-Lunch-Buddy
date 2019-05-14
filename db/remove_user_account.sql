@@ -1,1 +1,0 @@
-DELETE FROM lunchbuddy_user WHERE username = $1;

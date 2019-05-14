@@ -1,53 +1,110 @@
 
 
 .edit_space {
-    border: 2px solid black;
-    background-image: url('https://images.unsplash.com/photo-1501420896719-ad7fe0ee297e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60');
+    // border: 2px solid black;
+    background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+    background-attachment: fixed;
     background-size: 100% 100%;
-    height: 90vh;
+    height: 120vh;
     width: 90%;
     margin-left: 5%;
     display: flex;
     justify-content: center;
     align-content: center;
+    align-items: center;
+
+.info {
+    height: 100%;
+    width: 30%;
+    background-color: white;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    span {
+
+        margin-bottom: 40%;
+
+        div {
+            // border: 2px solid black;
+            // overflow: hidden;
+            // width: 400px;
+            // height: 45px;
+            // text-align: center;
+            // // line-height: 2;
+            h2 {
+                // display: inline-block;
+                color: salmon;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size: 30px;
+                letter-spacing: 5px;
+            }
+        }
+
+        h5 {
+            color: rgb(85, 84, 84);
+            text-align: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            line-height: 2;
+        }
+
+    }
+}
     
 .edit {
-    border: 2px solid black;
-    background-color: rgba(102, 102, 102, 0);
-    margin-top: 1.75%;
-    width: 30%;
-    height: 95%;
+    // border: 2px solid black;
+    background-color: rgb(255, 253, 253);
+    margin-right: 15%;
+    border-radius: 2.5%;
+    width: 40%;
+    height: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow-y: auto;
+
+img {
+    height: 45%;
+    width: 100%;
+    background-color: white;
+}
 
 input {
-    width: 90%;
-    height: 10%;
+    width: 80%;
+    height: 30vh;
     margin-top: 8px;
     color: rgb(0, 0, 0);
     background-color: white;
     border: none;
     border: 2px solid black;
-    border-radius: 5%/50%;
+    border-radius: 2.5%/50%;
     padding-left: 10px;
 }
 
 #bio {
-    width: 95%;
-    height: 30%;
+    width: 80%;
+    height: 75%;
     margin-top: 8px;
     color: rgb(0, 0, 0);
     background-color: white;
     border: none;
     border: 2px solid black;
-    border-radius: 12%/50%;
+    border-radius: 6%/50%;
+    padding-left: 20px;
+    padding-top: 5px;
     resize: none;
 }
 
 button {
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    padding: 10px;
+    width: 25%;
+    color: white;
+    background-color: rgb(41, 41, 58);
 }
 
 h4 {
@@ -62,12 +119,24 @@ h4 {
 .deactivate_account_space {
     display: flex;
     justify-content: center;
+    width: 90%;
+    background-color: maroon;
+    height: 60vh;
+    margin-left: 5%;
 
     button {
         height: 50px;
-        width: 100px;
+        width: 150px;
+        border: none;
         background-color: black;
         color: white;
     }
+}
+
+.deactivate_account {
+    height: 100%;
+    width: 70%;
+    background-color: white;
+    margin-left: auto;
 }
 
