@@ -54,8 +54,8 @@ render() {
         <div className={`drop${this.state.dropdown}`}>
         <ul>
             <Link to="/EditProfile"><li>Edit Profile</li></Link>
+            <Link to="/Main"><li>Match With a Buddy</li></Link>
             <li onClick={(e) => this.logout(e)}>Logout</li>
-            <li>About</li>
         </ul>
         </div>
         </div>

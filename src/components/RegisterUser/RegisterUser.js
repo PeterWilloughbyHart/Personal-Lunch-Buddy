@@ -18,6 +18,7 @@ class RegisterUser extends Component{
             age: "",
             bio: "",
             email: "",
+            phone: "",
             city: "",
             state: "",
             zip: "",
@@ -29,12 +30,15 @@ class RegisterUser extends Component{
         this.props.getsession()
     }
 
-    submit(e) {
+    async submit(e) {
         e.preventDefault();
         console.log('hit');
 
-        const {username, password, name, age, bio, email, city, state, zip, img} = this.state;
-        this.props.signup(username, password, name, age, bio, email, city, state, zip, img);
+        const {username, password, name, age, bio, email, phone, city, state, zip, img} = this.state;
+        await this.props.signup(username, password, name, age, bio, email, phone, city, state, zip, img);
+        Axios.post(`https://www.googleapis.com/geolocation/v1/geolocate?key=${REACT_APP_KEY}`).then(res => {
+            Axios.post("/api/location", {lat: res.data.location.lat, lng: res.data.location.lng, id: this.props.auth.id }).then(res => console.log(res))
+        })
     }
 
     render() {
@@ -43,8 +47,10 @@ class RegisterUser extends Component{
                 <Redirect to="/Main"/> // if there is a user, redirect to main page
         )
     }
+    console.log(this.props.auth)
         return(
             <div>
+                {this.props.auth.username &&  <Redirect to="/Main"/>}
                 <section className={styles.registry_section}>
                 <section className={styles.top_container}>
                 <form className={styles.registry_form}>
@@ -54,8 +60,9 @@ class RegisterUser extends Component{
                     <input placeholder="name" onChange={(e) => this.setState({name: e.target.value})}></input>
                     <input placeholder="age" onChange={(e) => this.setState({age: e.target.value})}></input>
                     <input placeholder="bio" onChange={(e) => this.setState({bio: e.target.value})}></input>
-                    <input placeholder="email" onChange={(e) => this.setState({email: e.target.value})}></input>
                     <input placeholder="city" onChange={(e) => this.setState({city: e.target.value})}></input>
+                    <input placeholder="email" onChange={(e) => this.setState({email: e.target.value})}></input>
+                    <input placeholder="phone" onChange={(e) => this.setState({phone: e.target.value})}></input>
                     <input placeholder="state" onChange={(e) => this.setState({state: e.target.value})}></input>
                     <input placeholder="zip" onChange={(e) => this.setState({zip: e.target.value})}></input>
                     <input placeholder="profile url" onChange={(e) => this.setState({img: e.target.value})}></input>

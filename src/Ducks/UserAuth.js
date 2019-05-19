@@ -8,6 +8,7 @@ const initialState = {
     age: "",
     bio: "",
     email: "",
+    phone: "",
     city: "",
     state: "",
     zip: "",
@@ -25,11 +26,11 @@ const GETSESSION = "GETSESSION";
 
 // Action Creators //
 
-export function signup(username, password, name, age, bio, email, city, state, zip, img) {
+export function signup(username, password, name, age, bio, email, phone, city, state, zip, img) {
     console.log('signup')
     return {
         type: SIGN_UP,
-        payload: axios.post("/auth/signup", {username, password, name, age, bio, email, city, state, zip, img})
+        payload: axios.post("/auth/signup", {username, password, name, age, bio, email, phone, city, state, zip, img})
     }
 }
 
@@ -76,6 +77,7 @@ export function getsession() {
 
 export default function reducer(state=initialState, action) {
     const {type, payload} = action;
+    console.log(action)
     switch (type) {
         case SIGN_UP + "_FULFILLED":
         return {
@@ -93,6 +95,7 @@ export default function reducer(state=initialState, action) {
             age: payload.data.age,
             bio: payload.data.bio,
             email: payload.data.email,
+            phone: payload.data.phone,
             city: payload.data.city,
             state: payload.data.state,
             zip: payload.data.zip,
@@ -126,6 +129,7 @@ export default function reducer(state=initialState, action) {
             age: payload.data.age,
             bio: payload.data.bio,
             email: payload.data.email,
+            phone: payload.data.phone,
             city: payload.data.city,
             state: payload.data.state,
             zip: payload.data.zip,
@@ -140,6 +144,7 @@ export default function reducer(state=initialState, action) {
             age: payload.data.age,
             bio: payload.data.bio,
             email: payload.data.email,
+            phone: payload.data.phone,
             city: payload.data.city,
             state: payload.data.state,
             zip: payload.data.zip,

@@ -9,7 +9,7 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            border: 2px solid black;
+            // border: 2px solid black;
     
     .tagline_space {
             margin-left: 20%;
@@ -17,24 +17,24 @@
             border: .5px solid black;
             box-shadow: -2px 2px 5px black;
             background: rgba(0, 0, 0, 0.397);
-            width: 40%;
+            width: 90%;
             height: 30%;
             text-align: center;
         
     h1  {
-             font-size: 25px;
+             font-size: 20px;
              color: gold;
         }
     }
         
     .login_box_space {
-        width: 60%;
+        width: 100%;
         height: 10vh;
         margin-top: 20px;
         display: flex;
         align-items: center;;
         justify-content: center;
-        border: 2px solid black;
+        // border: 2px solid black;
         
     .login_box {
         width: 90%;
@@ -64,8 +64,9 @@
         border: none;
         color: white;
         border-radius: 100%;
-        width: 13%;
-        height: 90%;
+        font-size: 10px;
+        width: 15%;
+        height: 70%;
         padding: 5px;
         margin-left: 20px;
         box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.514);
@@ -89,12 +90,13 @@
         margin-left: 5%;
         height: 100vh;
         width: 90%;
-        background-image: url("https://thespoon.tech/wp-content/uploads/2018/06/relishapp_2.jpg");
-        background-size: 100% 100%;
+        background-color: white;
+        // background-image: url("https://thespoon.tech/wp-content/uploads/2018/06/relishapp_2.jpg");
+        background-size: cover;
        }
        
        .explanation_box_section_opacity {
-       //border: 2px solid red;
+    //    border: 2px solid red;
        display: flex;
        justify-content: center;
        align-items: center;
@@ -112,10 +114,10 @@
            margin-top: 10px;
            display: flex; 
            justify-content: center;
-           flex-direction: row;
+           flex-direction: column;
            align-items: center;
            // margin-bottom: 5%;
-           // border: 2px solid red;
+        //    border: 2px solid red;
        }
        
        .explanation_text_box {
@@ -125,8 +127,8 @@
            align-items: center;
            color: white;
            // border: 2px solid white;
-           height: 75%;
-           width: 55%;
+           height: 55%;
+           width: 90%;
            background-color: rgb(9, 19, 22);
            box-shadow: -5px 5px 5px black;
            // border-right: .5px solid rgba(0, 0, 0, 0.548);
@@ -134,12 +136,12 @@
            // background-color: rgba(0, 0, 0, 0.329);
            
            h1 {
-               font-size: 30px;
+               font-size: 15px;
                color: white;
            }
            
            p {
-               font-size: 20px;
+               font-size: 12px;
                color: white;
            }
        }
@@ -150,20 +152,25 @@
            justify-content: center;
            align-items: center;
            // border: 1px solid white;
-           height: 45%;
-           width: 25%;
-           margin-left: 5%;
+           height: 35%;
+           width: 55%;
+           margin-top: 5%;
            background-color: rgb(9, 19, 22);
            box-shadow: -5px 5px 5px black;
            // border-right: .5px solid rgba(0, 0, 0, 0.548);
            // box-shadow: -5px 5px 5px black;
            // background-color: rgba(0, 0, 0, 0.329);
+
+           img {
+               width: 60%;
+               height: 50%;
+           }
            
            button {
                margin-top: 10px;
                padding: 5px;
-               width: 80px;
-               height: 35px;
+               width: 100%;
+               height: 100%;
                font-size: 15px;
                background-color: orangered;
                box-shadow: -2px 2px 2px black;
@@ -206,15 +213,15 @@
            background: none;
            height: 500px;
            width: 500px;
-           margin-top: 40px;
+        //    margin-top: 40px;
            }
        
            p {
            color: black;
            font-size: 25px;
-           position: absolute;
+        //    position: absolute;
            z-index: 2;
-           margin-left: 400px;
+        //    margin-left: 400px;
            }
            }
            }

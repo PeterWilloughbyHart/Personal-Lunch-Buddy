@@ -81,6 +81,11 @@ input {
     border: 2px solid black;
     border-radius: 2.5%/50%;
     padding-left: 10px;
+    outline: none;
+}
+
+::placeholder {
+    color: black;
 }
 
 #bio {
@@ -95,6 +100,7 @@ input {
     padding-left: 20px;
     padding-top: 5px;
     resize: none;
+    outline: none;
 }
 
 button {

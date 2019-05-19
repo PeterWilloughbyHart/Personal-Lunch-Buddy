@@ -73,7 +73,7 @@ render() {
                     <input placeholder={city} onChange={(e) => this.setState({city: e.target.value})}></input>
                     <input placeholder={state} onChange={(e) => this.setState({state: e.target.value})}></input>
                     <input placeholder={zip} onChange={(e) => this.setState({zip: e.target.value})}></input>
-                    <textarea maxlength="150" id={styles.bio} value={bio} onChange={(e) => this.setState({bio: e.target.value})}></textarea>
+                    <textarea maxlength="150" id={styles.bio} placeholder={bio} onChange={(e) => this.setState({bio: e.target.value})}></textarea>
                     <h4>please enter password for security</h4>
                     <input placeholder="password" onChange={(e) => this.setState({password: e.target.value})}/>
                     <button onClick={e => this.edit(e)}>Save</button>

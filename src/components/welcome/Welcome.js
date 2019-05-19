@@ -18,7 +18,8 @@ class Welcome extends Component{
     }
 
     componentDidMount() {
-        this.props.getsession().catch(err => console.log(err))
+        this.props.getsession().catch(err => console.log(err));
+        // window.location.reload();
     }
 
     login(e) {
@@ -76,18 +77,31 @@ class Welcome extends Component{
                     <section className={styles.welcome_info}>
                         <div className={styles.pizza_box_space}>
                         <div className={styles.pizza_box}>
-                                <img src="https://i.ibb.co/vXWc521/Project-Drawing-11274036410184917128.png"/>
-                                <p>Get food with another person. <br/> It's important for your sanity</p>
+                        <p>We're so happy to see you trying LunchBuddy! <br/> We hope that you find value in it that
+                        is made unique by you and your friends. Everyday, we recieve fun to read stories about both new connections made in
+                        people's long held home town and even people that have just moved in!
+                        We should let you know, we aren't exactly the same as a lot of other match making apps. But we find that refreshing.
+                        We give you only 5 buddy choices as opposed to a solid hundred or so that you'd receive elsewhere. <br/> We encourage you to pick from that selection!
+                        </p>
+                        <div>
+                        <h3>LunchBuddy™</h3>
+                        </div>
                         </div>
                         </div>
                         <div className={styles.salad_box_space}>
                         <div className={styles.salad_box}>
-                                <p>Get food with another person. <br/> It's important for your sanity</p>
-                                <img src=""/>
+                        <img src="https://images.unsplash.com/photo-1531947398206-60f8e97f34a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"/>
                         </div>
                         </div>
                     </section>
                     <section className={styles.footer}>
+                    <ul>
+                        <li>home</li>
+                        <li>about</li>
+                        <li>edit profile</li>
+                        <li>cravings</li>
+                        <li>buddy up</li>
+                    </ul>
                     </section>
             </div>
         )

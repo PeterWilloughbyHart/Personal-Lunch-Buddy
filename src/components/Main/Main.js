@@ -13,22 +13,35 @@ class Main extends Component{
         super(props) 
 
         this.state = {
-            buddyBox: "open"
+            buddyBox: "open",
+            matchName: "",
+            matchEmail: "",
+            matchImg: "",
+            matchDistance: "",
+            matchData: [],
+            id: 0
         }
     }
 
 
 componentDidMount() {
     this.props.getsession() 
-    Axios.post(`https://www.googleapis.com/geolocation/v1/geolocate?key=${REACT_APP_KEY}`).then( res => {
-            Axios.post("/api/location", {lat: res.data.location.lat, lng: res.data.location.lng, id: this.props.auth.id }).then(res => console.log(res))
-        })
+    // Axios.post(`https://www.googleapis.com/geolocation/v1/geolocate?key=${REACT_APP_KEY}`).then( res => {
+    //         Axios.put("/api/location", {lat: res.data.location.lat, lng: res.data.location.lng, id: this.props.auth.id }).then(res => console.log(res))
+    //     })
 }
 
 
-// matchUsers(){
-//     Axios.get("/auth/match")
-// }
+matchUsers(){
+    Axios.get("/auth/getmatch").then(res => {
+        this.setState({matchData: res.data.pairedBuddy})
+        console.log(this.state.matchData)
+    })
+}
+
+next() {
+    this.setState({ id: (this.state.id + 1) % this.state.matchData.length });
+    }
 
     render(){
         if(!this.props.auth.username){
@@ -36,6 +49,7 @@ componentDidMount() {
                 <Redirect to="/"/> // protected route, returns to welcome page if there is not a user on session
             )
         }
+        // let {matchData, id} = this.state
         return(
             <div>
             <div className={styles.main}>
@@ -51,13 +65,23 @@ componentDidMount() {
                     </div>
                     <div className={styles.buddy_match_space}>
                     <div className={styles.makematch}>
-                    <h2><span>{this.props.auth.name}!</span> <br/> We hope you enjoy a great meal <br/> and meet a great new person</h2>
-                    <button onClick={e => {this.state.buddyBox === "open" ? (this.setState({buddyBox: "closed"})) : this.setState({buddyBox: "open"})}}>Buddy Up!</button>
+                    <img src={this.props.auth.img}/>
+                    <div>
+                    <h2><span>Welcome to LunchBuddy, {this.props.auth.name}!</span> <br/> We hope you enjoy a good meal <br/> and meet a great new person in {this.props.auth.city}!</h2>
+                    <button onClick={(e) => this.matchUsers()}>Buddy Up!</button>
+                    <h4><img src="https://img.icons8.com/office/30/000000/marker.png"/>{this.props.auth.city}</h4>
+                    </div>
                     </div>
                     <div className={styles.buddy_box}>
-                    <img src=""/>
-                    <h1>User 2 Name</h1>
-                    <h6>User 2 info</h6>
+                    {this.state.matchData[0] ? (<img src={this.state.matchData[this.state.id].img}/>) : null}
+                    <div>
+                    {this.state.matchData[0] ? (<h1>{this.state.matchData[this.state.id].name}</h1>) : <h1>Click Buddy Up!</h1>}
+                    {this.state.matchData[0] ? (<h3>Age: {this.state.matchData[this.state.id].age}</h3>) : null}
+                    {this.state.matchData[0] ? (<h4><img src="https://img.icons8.com/office/30/000000/marker.png"/>{this.state.matchData[this.state.id].distance_in_miles}.0 Miles Away! Grab Lunch!</h4>) : null}
+                    {this.state.matchData[0] ? (<h3>{this.state.matchData[this.state.id].bio}</h3>) : null}
+                    {this.state.matchData[0] ? (<h4>Contact them at <img src="https://img.icons8.com/color/48/000000/phone.png"/> <span>{this.state.matchData[this.state.id].phone}</span>!</h4>) : null}
+                    {this.state.matchData[0] ? (<button onClick={e => this.next()}>Next Buddy</button>) : null}
+                    </div>
                     </div>
                     </div>
                 </div>
