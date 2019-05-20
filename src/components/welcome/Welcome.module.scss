@@ -1,3 +1,10 @@
+$lunchBuddy: rgb(9, 19, 22);
+
+@mixin flexBuddy {
+    display: flex;
+    justify-content: center;
+}
+
 body {
 height: 200vh;
 }
@@ -13,19 +20,18 @@ height: 200vh;
 width: 100%;
 height: 30%;
 // margin-top: 10px;
-display: flex;
+@include flexBuddy;
 align-items: center;
-justify-content: center;
 // border: 2px solid black;
 // margin-bottom: 3%;
 
 .tagline_space {
     margin-right: 20%;
-    border-radius: 15%/50%;
+    border-radius: 10%/50%;
     // border: .5px solid black;
     // box-shadow: -2px 2px 5px black;
     background: rgba(0, 0, 0, 0.397);
-    width: 30%;
+    width: 25%;
     text-align: center;
 
     h1{
@@ -37,9 +43,8 @@ justify-content: center;
 .login_box_space {
 width: 40%;
 height: 10vh;
-display: flex;
-align-items: center;;
-justify-content: center;
+@include flexBuddy;
+align-items: center;
 // border: 2px solid black;
 
 .login_box {
@@ -134,7 +139,7 @@ background-size: auto;
     // border: 2px solid white;
     height: 75%;
     width: 55%;
-    background-color: rgb(9, 19, 22);
+    background-color: $lunchBuddy;
     box-shadow: -5px 5px 5px black;
     // border-right: .5px solid rgba(0, 0, 0, 0.548);
     // box-shadow: -5px 5px 5px black;
@@ -188,7 +193,7 @@ button:hover {
     display: flex;
     align-items: center;
     flex-direction: row;
-    height: 100vh;
+    height: 80vh;
     width: 90%;
     margin-left: 5%;
     // border-top: 2px solid orangered;
@@ -197,9 +202,10 @@ button:hover {
     .pizza_box_space {
         height: 100%;
         width: 50%;
-        // border: 2px solid black;
         display: flex;
         justify-content: center;
+        align-items: center;
+        // border: 2px solid black;
         
         .pizza_box {
     width: 80%;
@@ -221,10 +227,10 @@ button:hover {
     div {
         width: 100%;
         height: 50%;
-        // border: 2px solid black;
         display: flex;
         justify-content: center;
         align-items: center;
+        // border: 2px solid black;
 
         h3 {
             text-align: center;
@@ -246,11 +252,11 @@ button:hover {
     .salad_box {
     // border: 2px solid black;
     width: 100%;
-    height: 50%;
+    height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50%;
+    margin-bottom: 10%;
 
     img {
         width: 60%;
@@ -290,3 +296,4 @@ button:hover {
 }
 
 @import './WelcomeMobile.module.scss';
+

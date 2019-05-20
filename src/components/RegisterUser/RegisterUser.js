@@ -54,18 +54,20 @@ class RegisterUser extends Component{
                 <section className={styles.registry_section}>
                 <section className={styles.top_container}>
                 <form className={styles.registry_form}>
-                <h1>Register with LunchBuddy!</h1>
-                    <input autocomplete="off" placeholder="username" onChange={(e) => this.setState({username: e.target.value})}></input>
-                    <input type="password" placeholder="password" onChange={(e) => this.setState({password: e.target.value})}></input>
-                    <input placeholder="name" onChange={(e) => this.setState({name: e.target.value})}></input>
-                    <input placeholder="age" onChange={(e) => this.setState({age: e.target.value})}></input>
-                    <input placeholder="bio" onChange={(e) => this.setState({bio: e.target.value})}></input>
-                    <input placeholder="city" onChange={(e) => this.setState({city: e.target.value})}></input>
-                    <input placeholder="email" onChange={(e) => this.setState({email: e.target.value})}></input>
-                    <input placeholder="phone" onChange={(e) => this.setState({phone: e.target.value})}></input>
-                    <input placeholder="state" onChange={(e) => this.setState({state: e.target.value})}></input>
-                    <input placeholder="zip" onChange={(e) => this.setState({zip: e.target.value})}></input>
-                    <input placeholder="profile url" onChange={(e) => this.setState({img: e.target.value})}></input>
+                <h1>Register with LunchBuddy</h1>
+                <div>
+                    <input autocomplete="off" placeholder="Username:" onChange={(e) => this.setState({username: e.target.value})}></input>
+                    <input type="password" placeholder="Password:" onChange={(e) => this.setState({password: e.target.value})}></input>
+                </div>
+                    <input placeholder="Full Name:" onChange={(e) => this.setState({name: e.target.value})}></input>
+                    <input placeholder="Age:" onChange={(e) => this.setState({age: e.target.value})}></input>
+                    <input placeholder="Bio:" onChange={(e) => this.setState({bio: e.target.value})}></input>
+                    <input placeholder="Email:" onChange={(e) => this.setState({email: e.target.value})}></input>
+                    <input placeholder="Phone:" onChange={(e) => this.setState({phone: e.target.value})}></input>
+                    <input placeholder="City:" onChange={(e) => this.setState({city: e.target.value})}></input>
+                    <input placeholder="State:" onChange={(e) => this.setState({state: e.target.value})}></input>
+                    <input placeholder="Zip:" onChange={(e) => this.setState({zip: e.target.value})}></input>
+                    <input placeholder="Profile Url:" onChange={(e) => this.setState({img: e.target.value})}></input>
                     <button onClick={(e) => this.submit(e)}> Submit </button>
                 </form>
                 <div className={styles.top_container_right}>

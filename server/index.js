@@ -29,10 +29,10 @@ massive(CONNECTION_STRING).then(db => {
 
 // match_maker //
 app.get('/auth/getmatch', getmatch);
-app.put('api/location', updatelocation)
+app.put('api/location', updatelocation);
 app.post('/api/location', storelocation);
 
-// User Auth //
+// User Auth //guiot
 app.post('/auth/signup', signup);
 app.post('/auth/login', login);
 app.put('/auth/edit', edit);
@@ -41,4 +41,6 @@ app.get('/auth/logout', logout);
 app.get('/auth/cookie', getsession);
 
 app.listen(SERVER_PORT, () => console.log('mic check one two'));
+
+
 
