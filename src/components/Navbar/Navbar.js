@@ -53,9 +53,10 @@ render() {
         </nav>
         <div className={`drop${this.state.dropdown}`}>
         <ul>
-            <Link to="/EditProfile"><li>Edit Profile</li></Link>
-            <Link to="/Main"><li>Match With a Buddy</li></Link>
+            <Link to="/EditProfile"><li onClick={e => this.dropdown()}>Edit Profile</li></Link>
+            <Link to="/Main"><li onClick={e => this.dropdown()}>Match With a Buddy</li></Link>
             <li onClick={(e) => this.logout(e)}>Logout</li>
+            <li onClick={e => this.dropdown()}>close</li>
         </ul>
         </div>
         </div>

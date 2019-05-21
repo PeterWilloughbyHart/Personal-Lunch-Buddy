@@ -33,8 +33,8 @@
         }
     
         h1 {
-        margin-left: 2px;
-        font-size: 14px;
+        margin-left: 5px;
+        font-size: 1.5em;
         }
         }
     
@@ -64,7 +64,7 @@
         }
     
         img {
-        height: 30px; width: 30px;
+        height: 35px; width: 35px;
         margin-right: 15%;
         // margin-top: 1px;
         // border-radius: 50%;
@@ -79,8 +79,8 @@
     
     .dropshut {
         height: 0vh;
-        width: 30%;
-        margin-left: 75%;
+        width: 40%;
+        margin-left: 55%;
         position: absolute;
         overflow: hidden;
         li {
@@ -94,9 +94,9 @@
     
     .dropopen {
         z-index: 3;
-        height: 20vh;
-        width: 20%;
-        margin-left: 75%;
+        height: 18vh;
+        width: 40%;
+        margin-left: 55%;
         position: absolute;
         background-color: orangered;
         animation-name: slide-down;
@@ -114,7 +114,7 @@
     @keyframes slide-down {
         0% {
             height: 0vh;
-            width: 20%;
+            width: 40%;
             overflow: hidden;
         }
         // 99% {
@@ -123,8 +123,8 @@
         //     overflow: hidden;
         // }
         100% {
-            height: 20vh;
-            width: 20%;
+            height: 18vh;
+            width: 40%;
             overflow: visible;
         }
     }

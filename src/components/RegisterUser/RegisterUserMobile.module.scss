@@ -1,0 +1,192 @@
+@media (max-width: 960px) {
+
+    body {
+        height: 90vh;
+    }
+
+    .registry_section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 90vh;
+        margin-left: 5%;
+        // border: 2px solid black;
+    }
+    
+    .top_container {
+        height: 80%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        // border: 2px solid black;
+    }
+    
+    .top_container_right {
+        width: 0%;
+        height: 100%;
+        background-color: rgb(9, 19, 22);
+    }
+    
+    .top_container_right_image {
+        display: none;
+        width: 0%;
+        height: 55%;
+        background-image: url("https://cdn20.patchcdn.com/users/22883462/20170422/124015/styles/T800x600/public/article_images/beach_house_deck_-_jack_elka_photography-1492879181-5408.jpg");
+        background-size: cover;
+    }
+    
+    .top_container_right_text {
+        width: 0%;
+        display: none;
+        height: 45%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        h1 {
+            display: none;
+        }
+    }
+    
+    .registry_form {
+        width: 100%;
+        height: 100%;
+        // margin-right: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(248, 248, 245);
+        color: black;
+        // border: 2px solid black;
+    
+        h1 {
+            font-size: 1.5em;
+            color: rgb(60, 73, 97);
+        }
+
+        a {
+            width: 25%;
+            margin-bottom: 5%;
+        }
+
+        a button {
+            width: 100%
+        }
+    
+        div {
+            // border: 2px solid black;
+            margin: 10px;
+            width: 70%;
+            height: 4%;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+    
+            input {
+            width: 40%;
+            height: 100%;
+            border: none;
+            padding-left: none;
+            margin-left: 0px;
+            margin-right: 0px;
+            }
+        }
+    
+        input {
+            width: 70%;
+            height: 4%;
+            margin: 8px;
+            border: none;
+            color: black;
+            background-color: rgb(9, 19, 22);
+            // border-radius: 5%/50%;
+            border: 2px solid white;
+            color: white;
+            padding-left: 8px;
+            outline: none;
+            // border: 2px solid black;
+        }
+        
+        button {
+            margin-bottom: 5%;
+            padding: 10px;
+            width: 25%;
+            border: none;
+            color: black;
+            background-color: rgb(60, 65, 107);
+            border: 1px solid white;
+            color: white;
+            // box-shadow: -2px 2px 5px black;
+        }
+        button:hover {
+            box-shadow: none;
+        }
+    }
+    
+    // .right_of_form {}
+    
+    ::placeholder {
+    color: rgb(255, 255, 255);
+    padding: 5px;   
+    }
+    
+    .registry_images {
+        width: 100%;
+        height: 20%;
+        border: 2px solid white;
+        display: flex;
+        flex-direction: row;
+    
+        .left {
+            height: 100%;
+            width: 60%;
+            // border: 2px solid black;
+            
+            .bottom_left {
+                height: 0%;
+                width: 100%;
+                background-color: rgb(255, 255, 255);
+                // border: 2px solid black;
+            }
+            .top_left {
+                height: 100%;
+                width: 100%;
+                background-color: rgb(255, 255, 255);
+                background-image: url("https://www.broadsheet.com.au/media/cache/30/28/3028d560e1730930dc730d2618835c36.jpg");
+                background-size: cover;
+                // border: 2px solid black;
+            }
+        }
+        
+        .right {
+            height: 100%;
+            width: 40%;
+            // border: 2px solid black;
+            
+            .top_right {
+                height: 60%;
+                width: 100%;
+                background-image: url("https://ichef.bbci.co.uk/news/624/cpsprodpb/14929/production/_91456248_b36588b9-5992-477b-abcc-ed378d352e9b.jpg");
+                background-size: cover;
+            }
+            .bottom_right {
+                height: 40%;
+                width: 100%;
+                background-color: rgb(255, 255, 255);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                h3 {
+                    text-align: center;
+                    font-size: 1em;
+                    color: rgb(79, 131, 83);
+                }
+            }
+        }
+    }
+}

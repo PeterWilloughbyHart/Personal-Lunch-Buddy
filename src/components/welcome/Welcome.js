@@ -65,7 +65,7 @@ class Welcome extends Component{
                         <div className={styles.explanation_box_div}>
                             <div className={styles.explanation_text_box}>
                                 <h1>How We're Here for You</h1>
-                                <p>We help you make lunch more fun, and more about your community</p>
+                                <p>We help you make lunch more fun, and more about your community. Register and give us a shot! We're confident you'll love being a buddy</p>
                             </div>
                             <div className={styles.register_button_box}>
                                 <img height="150px" width="150px" src="https://i.pinimg.com/originals/4f/eb/74/4feb745209cf7aba57463b20d27b61e3.png"/>
@@ -96,11 +96,9 @@ class Welcome extends Component{
                     </section>
                     <section className={styles.footer}>
                     <ul>
-                        <li>home</li>
-                        <li>about</li>
-                        <li>edit profile</li>
-                        <li>cravings</li>
-                        <li>buddy up</li>
+                        <li onClick={e => this.props.logout()}><img src="https://img.icons8.com/small/32/000000/home-page.png"/></li>
+                        <li><a href="https://www.instagram.com/lunch_buddy_tm/?hl=en" target="_blank"><img src="https://img.icons8.com/metro/26/000000/instagram-new.png"/></a></li>
+                        <li><a href="https://www.linkedin.com/in/peter-willoughby-hart-24a967129" target="_blank"><img src="https://img.icons8.com/ios-glyphs/30/000000/linkedin-2.png"/></a></li>
                     </ul>
                     </section>
             </div>

@@ -55,6 +55,7 @@ class RegisterUser extends Component{
                 <section className={styles.top_container}>
                 <form className={styles.registry_form}>
                 <h1>Register with LunchBuddy</h1>
+                    <Link to="/Welcome"><button> Back </button></Link>
                 <div>
                     <input autocomplete="off" placeholder="Username:" onChange={(e) => this.setState({username: e.target.value})}></input>
                     <input type="password" placeholder="Password:" onChange={(e) => this.setState({password: e.target.value})}></input>
@@ -68,7 +69,7 @@ class RegisterUser extends Component{
                     <input placeholder="State:" onChange={(e) => this.setState({state: e.target.value})}></input>
                     <input placeholder="Zip:" onChange={(e) => this.setState({zip: e.target.value})}></input>
                     <input placeholder="Profile Url:" onChange={(e) => this.setState({img: e.target.value})}></input>
-                    <button onClick={(e) => this.submit(e)}> Submit </button>
+                    <button onClick={(e) => this.submit(e)}> Submit </button>  
                 </form>
                 <div className={styles.top_container_right}>
                 <div className={styles.top_container_right_image}></div>

@@ -60,6 +60,15 @@
         color: rgb(60, 73, 97);
     }
 
+    a {
+        width: 20%;
+        margin-bottom: 5%;
+    }
+
+    a button {
+        width: 100%
+    }
+
     div {
         // border: 2px solid black;
         margin: 10px;
@@ -173,3 +182,4 @@ padding: 5px;
     }
 }
 
+@import "./RegisterUserMobile.module.scss"

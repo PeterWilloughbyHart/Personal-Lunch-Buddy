@@ -60,7 +60,7 @@ next() {
                         <div className={styles.type_3}><h5>Asian Food</h5></div>
                         <div className={styles.type_4}><h5>Pizza Place</h5></div>
                         <div className={styles.type_5}><h5>Mexican Food</h5></div>
-                        <div className={styles.type_6}><h5>Middle Eastern</h5></div>
+                        {/* <div className={styles.type_6}><h5>Middle Eastern</h5></div> */}
                         <div className={styles.type_7}><h5>Italian Food</h5></div>
                     </div>
                     <div className={styles.buddy_match_space}>
@@ -77,10 +77,10 @@ next() {
                     <div>
                     {this.state.matchData[0] ? (<h1>{this.state.matchData[this.state.id].name}</h1>) : <h1>Click Buddy Up!</h1>}
                     {this.state.matchData[0] ? (<h3>Age: {this.state.matchData[this.state.id].age}</h3>) : null}
-                    {this.state.matchData[0] ? (<h4><img src="https://img.icons8.com/office/30/000000/marker.png"/>{this.state.matchData[this.state.id].distance_in_miles}.0 Miles Away! Grab Lunch!</h4>) : null}
                     {this.state.matchData[0] ? (<h3>{this.state.matchData[this.state.id].bio}</h3>) : null}
                     {this.state.matchData[0] ? (<h4>Contact them at <img src="https://img.icons8.com/color/48/000000/phone.png"/> <span>{this.state.matchData[this.state.id].phone}</span>!</h4>) : null}
                     {this.state.matchData[0] ? (<button onClick={e => this.next()}>Next Buddy</button>) : null}
+                    {this.state.matchData[0] ? (<h4><img src="https://img.icons8.com/office/30/000000/marker.png"/>{this.state.matchData[this.state.id].distance_in_miles}.0 Miles Away! Grab Lunch!</h4>) : null}
                     </div>
                     </div>
                     </div>
