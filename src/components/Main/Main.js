@@ -46,21 +46,21 @@ class Main extends Component {
           {this.state.matchData[0] ? 
       
             <div id="match-card">
-              <img src={this.state.matchData[this.state.id].img} />
-              <h1>{this.state.matchData[this.state.id].name}</h1>
-              <h3>Age: {this.state.matchData[this.state.id].age}</h3>
-              <h3>{this.state.matchData[this.state.id].bio}</h3>
-              <h4>Contact them at: <span>{this.state.matchData[this.state.id].phone}</span>!</h4>
-              <img src="https://img.icons8.com/color/48/000000/phone.png" />
+              <img id="match_profile" alt="match profile" src={this.state.matchData[this.state.id].img} />
+              <h2 id="match_name">{this.state.matchData[this.state.id].name}</h2>
+              <h3 id="match_age">Age: {this.state.matchData[this.state.id].age}</h3>
+              <h3 id="match_bio">Bio: {this.state.matchData[this.state.id].bio}</h3>
+              <img id="phone_icon" alt="phone" src="https://img.icons8.com/color/48/000000/phone.png" />
+              <h4 id="match_contact">Contact them at: <span>{this.state.matchData[this.state.id].phone}</span>!</h4>
+              <img id="marker_icon" alt="marker" src="https://img.icons8.com/office/30/000000/marker.png" />
+              <h4 id="match_distance">{this.state.matchData[this.state.id].distance_in_miles}.0 Miles Away! Grab Lunch!</h4> 
               <button onClick={e => this.next()}>Next Buddy</button>
-              <img src="https://img.icons8.com/office/30/000000/marker.png" />
-              <h4>{this.state.matchData[this.state.id].distance_in_miles}.0 Miles Away! Grab Lunch!</h4> 
             </div> 
             :
             <div id="user-card">
              <img src={this.props.auth.img} />
-               <h2><span>Welcome to LunchBuddy, <br /> {this.props.auth.name}!</span></h2>
-               <h3>We hope you enjoy a good meal with a new friend!</h3>
+               <h2>Welcome to LunchBuddy, <br /> <span>{this.props.auth.name}</span>!</h2>
+               <h3>We wish you a nice meal and a new friend!</h3>
                <button id="buddy_button" onClick={e => this.matchUsers()}>Buddy Up!</button>
             </div> 
             
