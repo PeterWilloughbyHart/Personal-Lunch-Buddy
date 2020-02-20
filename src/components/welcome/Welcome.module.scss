@@ -1,31 +1,31 @@
 $lunchBuddy: rgb(9, 19, 22);
 
 @mixin flexBuddy {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-body {
-height: 200vh;
-}
+// body {
+//   height: 200vh;
+// }
 
 .welcome_page_top {
-    height: 10vh;
-    width: 90%;
-    margin-left: 5%;
-    background-color: rgb(255, 255, 255);
+  height: 10vh;
+  width: 90%;
+  margin-left: 5%;
+  background-color: rgb(255, 255, 255);
 }
 
 .input_stretch {
-width: 100%;
-height: 30%;
-// margin-top: 10px;
-@include flexBuddy;
-align-items: center;
-// border: 2px solid black;
-// margin-bottom: 3%;
+  width: 100%;
+  height: 30%;
+  // margin-top: 10px;
+  @include flexBuddy;
+  align-items: center;
+  // border: 2px solid black;
+  // margin-bottom: 3%;
 
-.tagline_space {
+  .tagline_space {
     margin-right: 20%;
     border-radius: 10%/50%;
     // border: .5px solid black;
@@ -34,196 +34,195 @@ align-items: center;
     width: 25%;
     text-align: center;
 
-    h1{
-        padding: 10px;
-        color: gold;
+    h1 {
+      padding: 10px;
+      color: gold;
     }
-}
+  }
 
-.login_box_space {
-width: 40%;
-height: 10vh;
-@include flexBuddy;
-align-items: center;
-// border: 2px solid black;
+  .login_box_space {
+    width: 40%;
+    height: 10vh;
+    @include flexBuddy;
+    align-items: center;
+    // border: 2px solid black;
 
-.login_box {
-width: 90%;
-height: 90%;
-padding: 5px;
-border-radius: 8%/50%;
-// border: .5px solid rgba(0, 0, 0, 0.548);
-// border-right: .5px solid rgba(0, 0, 0, 0.548);
-// box-shadow: -2px 2px 5px black;
-// background-color: rgba(16, 16, 19, 0.274);
-background-color: rgb(255, 255, 255);
-display: flex;
-align-items: center;;
-justify-content: center;
-}
+    .login_box {
+      width: 90%;
+      height: 90%;
+      padding: 5px;
+      border-radius: 8%/50%;
+      // border: .5px solid rgba(0, 0, 0, 0.548);
+      // border-right: .5px solid rgba(0, 0, 0, 0.548);
+      // box-shadow: -2px 2px 5px black;
+      // background-color: rgba(16, 16, 19, 0.274);
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-input {
-margin-left: 10px;
-width: 25%;
-border-radius: 10%/50%;
-text-align: center;
-padding: 6px;
-border: 1px solid rgb(192, 192, 192);
-outline: none;
-}
+    input {
+      margin-left: 10px;
+      width: 25%;
+      border-radius: 10%/50%;
+      text-align: center;
+      padding: 6px;
+      border: 1px solid rgb(192, 192, 192);
+      outline: none;
+    }
 
-button {
-border: none;
-color: white;
-border-radius: 100%;
-width: 13%;
-height: 90%;
-padding: 5px;
-margin-left: 20px;
-box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.514);
-}
+    button {
+      border: none;
+      color: white;
+      border-radius: 100%;
+      width: 13%;
+      height: 90%;
+      padding: 5px;
+      margin-left: 20px;
+      box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.514);
+    }
 
-button:hover {
-    box-shadow: none;
-}
+    button:hover {
+      box-shadow: none;
+    }
 
-.login_button {
-background-color: gold;
-}  
+    .login_button {
+      background-color: gold;
+    }
 
-.logout_button {
-background-color: rgb(43, 2, 2);
-}  
-}
+    .logout_button {
+      background-color: rgb(43, 2, 2);
+    }
+  }
 }
 
 .explanation_box_section {
- margin-left: 5%;
- height: 95vh;
- width: 90%;
- background-image: url("https://thespoon.tech/wp-content/uploads/2018/06/relishapp_2.jpg");
- background-size: 100% 100%;
+  margin-left: 5%;
+  height: 95vh;
+  width: 90%;
+  background-image: url("https://thespoon.tech/wp-content/uploads/2018/06/relishapp_2.jpg");
+  background-size: 100% 100%;
 }
 
 .explanation_box_section_opacity {
-// border: 2px solid red;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-width: 100%;
-height: 100%;
-background-color: rgba(2, 2, 2, 0.616);
-background-size: auto;
+  // border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(2, 2, 2, 0.616);
+  background-size: auto;
 }
 
 .explanation_box_div {
-    background-color: rgba(9, 19, 22, 0);
-    height: 80%;
-    width: 100%;
-    margin-top: 10px;
-    display: flex; 
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    // margin-bottom: 5%;
-    // border: 2px solid red;
+  background-color: rgba(9, 19, 22, 0);
+  height: 80%;
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  // margin-bottom: 5%;
+  // border: 2px solid red;
 }
 
 .explanation_text_box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  // border: 2px solid white;
+  height: 75%;
+  width: 55%;
+  background-color: $lunchBuddy;
+  box-shadow: -5px 5px 5px black;
+  // border-right: .5px solid rgba(0, 0, 0, 0.548);
+  // box-shadow: -5px 5px 5px black;
+  // background-color: rgba(0, 0, 0, 0.329);
+
+  h1 {
     color: white;
-    // border: 2px solid white;
-    height: 75%;
-    width: 55%;
-    background-color: $lunchBuddy;
-    box-shadow: -5px 5px 5px black;
-    // border-right: .5px solid rgba(0, 0, 0, 0.548);
-    // box-shadow: -5px 5px 5px black;
-    // background-color: rgba(0, 0, 0, 0.329);
-    
-    h1 {
-        color: white;
-    }
-    
-    p {
-        color: white;
-        width: 70%;
-        text-align: center;
-    }
+  }
+
+  p {
+    color: white;
+    width: 70%;
+    text-align: center;
+  }
 }
 
 .register_button_box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    // border: 1px solid white;
-    height: 65%;
-    width: 25%;
-    margin-left: 1%;
-    background-color: rgb(9, 19, 22);
-    box-shadow: -5px 5px 5px black;
-    // border-right: .5px solid rgba(0, 0, 0, 0.548);
-    // box-shadow: -5px 5px 5px black;
-    // background-color: rgba(0, 0, 0, 0.329);
-    
-    button {
-        margin-top: 10px;
-        padding: 5px;
-        width: 80px;
-        height: 35px;
-        font-size: 15px;
-        background-color: orangered;
-        box-shadow: -2px 2px 2px black;
-        border: none;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // border: 1px solid white;
+  height: 65%;
+  width: 25%;
+  margin-left: 1%;
+  background-color: rgb(9, 19, 22);
+  box-shadow: -5px 5px 5px black;
+  // border-right: .5px solid rgba(0, 0, 0, 0.548);
+  // box-shadow: -5px 5px 5px black;
+  // background-color: rgba(0, 0, 0, 0.329);
+
+  button {
+    margin-top: 10px;
+    padding: 5px;
+    width: 80px;
+    height: 35px;
+    font-size: 15px;
+    background-color: orangered;
+    box-shadow: -2px 2px 2px black;
+    border: none;
+  }
 }
 
 button:hover {
-    background-color: rgb(167, 44, 0);
-    color: white;
-    box-shadow: none;
+  background-color: rgb(167, 44, 0);
+  color: white;
+  box-shadow: none;
 }
 
-
 .welcome_info {
-    // border: 2px solid red;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    height: 80vh;
-    width: 90%;
-    margin-left: 5%;
-    // border-top: 2px solid orangered;
-    background-color: rgba(253, 255, 236, 0.883);
+  // border: 2px solid red;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 80vh;
+  width: 90%;
+  margin-left: 5%;
+  // border-top: 2px solid orangered;
+  background-color: rgba(253, 255, 236, 0.883);
 
-    .pizza_box_space {
-        height: 100%;
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        // border: 2px solid black;
-        
-        .pizza_box {
-    width: 80%;
-    height: 70%;
+  .pizza_box_space {
+    height: 100%;
+    width: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    line-height: 150%;
+    align-items: center;
+    // border: 2px solid black;
 
-    p {
-    color: black;
-    font-size: 20px;
-    }
-    div {
+    .pizza_box {
+      width: 80%;
+      height: 70%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      line-height: 150%;
+
+      p {
+        color: black;
+        font-size: 20px;
+      }
+      div {
         width: 100%;
         height: 50%;
         display: flex;
@@ -232,15 +231,15 @@ button:hover {
         // border: 2px solid black;
 
         h3 {
-            text-align: center;
-            font-size: 50px;
-            color: rgb(79, 131, 83);
+          text-align: center;
+          font-size: 50px;
+          color: rgb(79, 131, 83);
         }
+      }
     }
-    }
-    }
-    
-    .salad_box_space {
+  }
+
+  .salad_box_space {
     // border: 2px solid black;
     height: 100%;
     width: 50%;
@@ -249,50 +248,49 @@ button:hover {
     align-items: center;
 
     .salad_box {
-    // border: 2px solid black;
-    width: 100%;
-    height: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10%;
+      // border: 2px solid black;
+      width: 100%;
+      height: 70%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // margin-bottom: 10%;
 
-    img {
+      img {
         width: 60%;
         height: 100%;
-    }
+      }
 
-    p {
-    color: white;
-    margin-right: 10px;
+      p {
+        color: white;
+        margin-right: 10px;
+      }
     }
-    }
-    }  
+  }
 }
 
 .footer {
-    background-color: rgb(208, 208, 221);
-    height: 20vh;
-    width: 90%;
+  background-color: rgb(208, 208, 221);
+  height: 20vh;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+
+  ul {
+    width: 100%;
+    height: 50%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    margin-left: 5%;
+    flex-direction: row;
+  }
 
-    ul {
-        width: 100%;
-        height: 50%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: row;
-    }
-
-    li {
-        list-style: none;
-        font-size: 22px;
-    }
+  li {
+    list-style: none;
+    font-size: 22px;
+  }
 }
 
-@import './WelcomeMobile.module.scss';
-
+@import "./WelcomeMobile.module.scss";

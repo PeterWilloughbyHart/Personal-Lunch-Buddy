@@ -36,34 +36,35 @@ dropdown() {
 
 render() {
     return(
-        <div>
-        <nav className="welcome">
-            <div className="logo">
-                <Link to="/Main"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKO7N15yCr44wAfgwGZd5A84h4wAUGsL1BtidAaA4UyjOemPLPVw"/></Link>
-                <h1>LunchBuddy</h1> 
-            </div>
-            <div className="profile">
-                {this.props.auth.username ? ( 
+        <nav>
+            <section className="welcome">
+                <div className="logo">
+                    <Link to="/Main"><img src="https://img.icons8.com/color/48/000000/lunchbox.png"/></Link>
+                    <h1>LunchBuddy</h1> 
+                </div>
                 <div className="profile">
-                <h5>{this.props.auth.name}</h5>
-                <img onClick={e => this.dropdown()} height="58px" width="58px" src={this.props.auth.img}/>
-                <button className="logout_button" onClick={e => this.logout(e)}>Logout</button></div>) : 
-                (<img onClick={e => this.dropdown()} height="54px" width="54px" src="https://img.icons8.com/windows/64/000000/user.png"/>)}
+                    {this.props.auth.username ? ( 
+                    <div className="profile">
+                    <h5>{this.props.auth.name}</h5>
+                    <img id="profile-button" onClick={e => this.dropdown()} height="58px" width="58px" src={this.props.auth.img}/>
+                    <img id="settings" onClick={e => this.dropdown()} src="https://img.icons8.com/material-rounded/24/000000/settings.png"/>
+                    <button className="logout_button" onClick={e => this.logout(e)}>Logout</button></div>) : 
+                    (<img onClick={e => this.dropdown()} height="54px" width="54px" src="https://img.icons8.com/windows/64/000000/user.png"/>)}
+                </div>
+            </section>
+            <div className={`drop${this.state.dropdown}`}>
+                <ul>
+                    <Link to="/EditProfile"><li onClick={e => this.dropdown()}>Edit Profile</li></Link>
+                    <Link to="/Main"><li onClick={e => this.dropdown()}>Match With a Buddy</li></Link>
+                    <li onClick={(e) => this.logout(e)}>Logout</li>
+                    <li onClick={e => this.dropdown()}>Nevermind</li>
+                </ul>
             </div>
         </nav>
-        <div className={`drop${this.state.dropdown}`}>
-        <ul>
-            <Link to="/EditProfile"><li onClick={e => this.dropdown()}>Edit Profile</li></Link>
-            <Link to="/Main"><li onClick={e => this.dropdown()}>Match With a Buddy</li></Link>
-            <li onClick={(e) => this.logout(e)}>Logout</li>
-            <li onClick={e => this.dropdown()}>close</li>
-        </ul>
-        </div>
-        </div>
     )
 }
 }
 
-
 const mapStateToProps = reduxState => reduxState;
+
 export default connect(mapStateToProps, { logout, getsession })(Navbar);
