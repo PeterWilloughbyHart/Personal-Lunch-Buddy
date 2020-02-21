@@ -58,10 +58,10 @@ class Main extends Component {
             </div> 
             :
             <div id="user-card">
-             <img src={this.props.auth.img} />
-               <h2>Welcome to LunchBuddy, <br /> <span>{this.props.auth.name}</span>!</h2>
-               <h3>We wish you a nice meal and a new friend!</h3>
-               <button id="buddy_button" onClick={e => this.matchUsers()}>Buddy Up!</button>
+              <img src={this.props.auth.img} />
+              <h2>Welcome to LunchBuddy, <br /> <span>{this.props.auth.name}</span>!</h2>
+              <h3>We wish you a nice meal and a new friend!</h3>
+              <button id="buddy_button" onClick={e => this.matchUsers()}>Buddy Up!</button>
             </div> 
             
             }

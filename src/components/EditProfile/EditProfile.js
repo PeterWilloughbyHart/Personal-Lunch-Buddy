@@ -23,9 +23,10 @@ class EditProfile extends Component{
         }
     }
 
-// componentDidMount() {
-//     this.props.getsession().catch(err => console.log(err));
-// }
+componentDidMount() {
+    this.props.getsession().catch(err => console.log(err));
+}
+
 
 edit(e) {
     e.preventDefault();
@@ -47,7 +48,6 @@ deactivate(e) {
 render() {
     if(!this.props.auth.username){ return <Redirect to="/"/> }
     const {name, age, bio, email, city, state, zip, img} = this.props.auth;
-    console.log(bio)
     
     return (
         <section id="edit_section">
@@ -65,13 +65,13 @@ render() {
                 <input placeholder={city} onChange={(e) => this.setState({city: e.target.value})}/>
                 <input placeholder={state} onChange={(e) => this.setState({state: e.target.value})}/>
                 <input placeholder={zip} onChange={(e) => this.setState({zip: e.target.value})}/>
-                <textarea id="" maxLength="150" placeholder={bio} onChange={(e) => this.setState({bio: e.target.value})}></textarea>
+                <textarea maxLength="150" placeholder={bio} onChange={(e) => this.setState({bio: e.target.value})}></textarea>
                 <button onClick={e => this.edit(e)}>Update</button>
                 </div>
-                <h4>please enter password for security</h4>
-                <input placeholder="password" onChange={(e) => this.setState({password: e.target.value})}/>
             </section>
             <section id="deactivate_account">
+                <h4>Deactivate Account: Please Enter Password to Confirm</h4>
+                <input placeholder="password" onChange={(e) => this.setState({password: e.target.value})}/>
                 <button onClick={e => this.deactivate(e)}>Deactivate</button>
             </section>
         </section>

@@ -8,7 +8,7 @@
     box-shadow: -3px 3px 10px rgb(75, 75, 75);
     #edit_hero {
         text-align: center;
-        background-color: white;
+        background-color: rgb(240, 251, 251);
         width: 100%;
         h2 {
             color: salmon;
@@ -25,32 +25,61 @@
         text-align: center;
         
         img {
-            width: 100%;
+            max-width: 100%;
+            border: 2px solid black;
         }
 
         div {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             width: 100%;
             margin: 0 auto;
             // border: 2px solid black;
-            background-color: #546e7a;
+            background-color: rgb(240, 251, 251);
 
             input {
-                width: 30%;
+                width: 60%;
                 padding: 10px;
-                margin: 10px;
+                margin: 10px auto;
+                grid-column: span 2;
+                border: 2px solid #384b53;
             }
             ::placeholder {
                 color: black;
             }
             textarea {
-                width: 50%;
+                width: 80%;
                 height: 80px;
+                margin: 10px auto;
+                grid-column: span 4;
+                border: 2px solid #384b53;
+            }
+            button {
+                width: 100%;
+                height: 100%;
+                padding: 10px;
+                margin: 10px auto;
+                grid-column: span 4;
+                border: none;
+                background-color: rgb(62, 62, 95);
+                color: white;
+
             }
         }
 
     }
 
     #deactivate_account {
-
+        height: 20vh;
+        width: 100%;
+        text-align: center;
+        background-color: rgb(240, 251, 251);
+        button {
+            margin: 0 10px;
+            padding: 10px;
+            border: none;
+            background-color: rgb(62, 62, 95);
+            color: white;
+        }
     }
 }

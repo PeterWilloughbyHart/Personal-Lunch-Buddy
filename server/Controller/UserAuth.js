@@ -3,27 +3,18 @@ const bcrypt = require('bcryptjs')
 // REGISTER //
 
 const signup = async (req, res, next) => {
+    console.log("hit hit hit hit")
     const { username, password, name, age, bio, email, phone, city, state, zip, img} = req.body;
     const hash = await bcrypt.hash(password, 10);
 
     const db = req.app.get("db");
-    const results = await db.signup([username, hash, name, age, bio, email, phone, city, state, zip, img]);
+    const result = await db.signup([username, hash, name, age, bio, email, phone, city, state, zip, img]);
 
-    req.session.user = { id: results[0].id, username: results[0].username };
+    req.session.user = { id: result[0].id, username: result[0].username, password: result[0].password, name: result[0].name, age: result[0].age, bio: result[0].bio, email: result[0].email, phone: result[0].phone, city: result[0].city, state: result[0].state, zip: result[0].zip, img: result[0].img };
 
-    const result = await db.login(username);
-        if (result[0]) {
+    //try replacing below code with next() to login;
 
-            const isMatch = await bcrypt.compare( password, result[0].password);
-
-            if (isMatch) {
-                req.session.user = {id, username, password, name, age, bio, email, phone, city, state, zip, img};
-                res.json(req.session.user);
-            } 
-            else {
-                res.status(403).json('Error with signup')
-            }
-     }
+   next()
 };
  
 // EDIT //
@@ -34,7 +25,7 @@ const edit = async (req, res) => {
     const result = await db.edit_profile([username, name, age, bio, email, phone, city, state, zip, img])
     if (result.err) {console.log("error with response in edit method");}
     else { console.log(result, result[0].username)};
-    // req.session.user = {id, username, password, name, age, bio, email, phone, city, state, zip, img};
+    req.session.user = {id: result[0].id, username: result[0].username, password: result[0].password, name: result[0].name, age: result[0].age, bio: result[0].bio, email: result[0].email, phone: result[0].phone, city: result[0].city, state: result[0].state, zip: result[0].zip, img: result[0].img};
     res.json(result);
 }
 
@@ -69,11 +60,9 @@ const login = async (req, res) => {
 
 // Keep session on refresh //
 
-const getsession = (req, res, next) => {
-    console.log(req.session.user)
-    const { session } = req;
-    res.json(session.user);
-    next();
+const getsession = (req, res) => {
+    console.log("req is", req.session.user)
+    res.json(req.session.user);
 }
 
 // Logout //

@@ -33,7 +33,7 @@ app.put('api/location', updatelocation);
 app.post('/api/location', storelocation);
 
 // User Auth //guiot
-app.post('/auth/signup', signup);
+app.post('/auth/signup', signup, login);
 app.post('/auth/login', login);
 app.put('/auth/edit', edit);
 app.delete('/auth/deactivate/:id', deactivate);
