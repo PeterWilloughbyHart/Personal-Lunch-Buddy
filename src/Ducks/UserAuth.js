@@ -42,11 +42,11 @@ export function login(username, password) {
     }
 }
 
-export function edit(session, username, name, age, bio, email, city, state, zip, img) {
-    console.log("hit on edit in ducks");
+export function edit(username, name, age, bio, email, city, state, zip, img) {
+    console.log("hit on edit in ducks", username );
     return {
         type: EDIT_PROFILE,
-        payload: axios.put("/auth/edit", {session, username, name, age, bio, email, city, state, zip, img})
+        payload: axios.put("/auth/edit", {username, name, age, bio, email, city, state, zip, img})
     }
 }
 
@@ -102,9 +102,21 @@ export default function reducer(state=initialState, action) {
             img: payload.data.img
         }
         case EDIT_PROFILE + "_FULFILLED":
+            console.log("edit profile returned: ", payload)
         return {
             ...state, 
-            username: payload.data.username // put this back
+            id: payload.data.id,
+            username: payload.data.username,  // I put everything after username here last night;
+            password: payload.data.password,
+            name: payload.data.name,
+            age: payload.data.age,
+            bio: payload.data.bio,
+            email: payload.data.email,
+            phone: payload.data.phone,
+            city: payload.data.city,
+            state: payload.data.state,
+            zip: payload.data.zip,
+            img: payload.data.img
         }
         case DEACTIVATE_ACCOUNT + "_FULFILLED":
         return {

@@ -39,6 +39,9 @@
                 padding: 10px;
                 margin: 10px;
             }
+            ::placeholder {
+                color: black;
+            }
             textarea {
                 width: 50%;
                 height: 80px;

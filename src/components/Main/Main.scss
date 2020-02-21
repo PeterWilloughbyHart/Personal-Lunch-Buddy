@@ -83,7 +83,7 @@
               grid-row: 5/7;
               grid-column: 1/7;
               font-size: .7em;
-              margin: 0 auto auto 30px;
+              margin: 0 10%;
             }
             #marker_icon {
               grid-row: 7/8;
@@ -94,18 +94,26 @@
               grid-row: 7/8;
               grid-column: 2/4;
               font-size: .6em;
-              margin: 20% auto auto 0;
+              margin: 10% auto auto 0;
+                span {
+                  font-size: 2em;
+                }
             }
             #phone_icon {
               grid-column: 4/5;
               grid-row: 7/8;
               margin: auto;
+              margin-left: 0;
             }
             #match_contact {
               grid-column: 5/7;
               grid-row: 7/8;
               font-size: .6em;
-              margin: 20% auto auto 0;
+              // margin: 10% auto auto 0;
+              align-self: center;
+                span {
+                  font-size: 1.2em;
+                }
             }
             button {
               background-color: rgb(62, 62, 95);

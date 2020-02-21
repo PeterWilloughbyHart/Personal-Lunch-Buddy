@@ -51,9 +51,9 @@ class Main extends Component {
               <h3 id="match_age">Age: {this.state.matchData[this.state.id].age}</h3>
               <h3 id="match_bio">Bio: {this.state.matchData[this.state.id].bio}</h3>
               <img id="phone_icon" alt="phone" src="https://img.icons8.com/color/48/000000/phone.png" />
-              <h4 id="match_contact">Contact them at: <span>{this.state.matchData[this.state.id].phone}</span>!</h4>
+              <h4 id="match_contact">Contact them at: <span>{this.state.matchData[this.state.id].phone}!</span></h4>
               <img id="marker_icon" alt="marker" src="https://img.icons8.com/office/30/000000/marker.png" />
-              <h4 id="match_distance">{this.state.matchData[this.state.id].distance_in_miles}.0 Miles Away! Grab Lunch!</h4> 
+              <h4 id="match_distance"><span>{this.state.matchData[this.state.id].distance_in_miles}.0</span> Miles Away! Grab Lunch!</h4> 
               <button onClick={e => this.next()}>Next Buddy</button>
             </div> 
             :
