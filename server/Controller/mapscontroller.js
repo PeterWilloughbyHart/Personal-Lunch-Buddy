@@ -10,14 +10,11 @@ const storelocation = async (req, res) => {
 }
 
 const updatelocation = async (req, res) => {
-        console.log("update update lat lng lt lng")
         const db = req.app.get("db");
         const {lat, lng, id} = req.body;
-        console.log(lat, lng, id,"update")
-
+        console.log("hithithithithitihititih", lat, lng, id);
         const results = await db.update_location([lat, lng, id]);
-        console.log("location updated")
-        return res.json(results);
+        res.json(results);
 }
 
 

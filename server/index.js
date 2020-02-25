@@ -29,7 +29,7 @@ massive(CONNECTION_STRING).then(db => {
 
 // match_maker //
 app.get('/auth/getmatch', getmatch);
-app.put('api/location', updatelocation);
+app.put('/api/location', updatelocation);
 app.post('/api/location', storelocation);
 
 // User Auth //guiot

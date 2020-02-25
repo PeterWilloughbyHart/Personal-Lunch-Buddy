@@ -150,6 +150,7 @@ export default function reducer(state=initialState, action) {
         case GETSESSION + "_FULFILLED":
         return {
             ...state, 
+            id: payload.data.id,
             username: payload.data.username,
             password: payload.data.password,
             name: payload.data.name,

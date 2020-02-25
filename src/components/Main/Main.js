@@ -12,56 +12,54 @@ class Main extends Component {
     super(props);
 
     this.state = {
-      buddyBox: "open",
-      matchName: "",
-      matchEmail: "",
-      matchImg: "",
-      matchDistance: "",
-      matchData: [],
-      id: 0
+      matches: [],
+      index: 0
     };
   }
 
   componentDidMount() {
-    this.props.getsession();
-    // Axios.post(`https://www.googleapis.com/geolocation/v1/geolocate?key=${REACT_APP_KEY}`).then( res => {
-    //         Axios.put("/api/location", {lat: res.data.location.lat, lng: res.data.location.lng, id: this.props.auth.id }).then(res => console.log(res))
-    //     })
+    this.props.getsession().then(res => console.log(res.value.data));
   }
-
-  matchUsers() {
-    Axios.get("/auth/getmatch").then(res => this.setState({ matchData: res.data.pairedBuddy }));
+  
+  findUsers() {
+    Axios.post(`https://www.googleapis.com/geolocation/v1/geolocate?key=${REACT_APP_KEY}`)
+    .then( res => {
+    Axios.put("/api/location", {lat: res.data.location.lat, lng: res.data.location.lng, id: this.props.auth.id })
+    })
+    .then(res => {
+    Axios.get("/auth/getmatch").then(res => this.setState({ matches: res.data.matchResults }));
+    })
   }
-
-  next() {
-    this.setState({ id: (this.state.id + 1) % this.state.matchData.length });
+  
+  nextMatch() {
+    this.setState({ index: (this.state.index + 1) % this.state.matches.length });
   }
 
   render() {
 
     if(!this.props.auth.username){ return <Redirect to="/" />} 
-
+    
     return (
       <section id="match-section">
-          {this.state.matchData[0] ? 
+          {this.state.matches[0] ? 
       
-            <div id="match-card">
-              <img id="match_profile" alt="match profile" src={this.state.matchData[this.state.id].img} />
-              <h2 id="match_name">{this.state.matchData[this.state.id].name}</h2>
-              <h3 id="match_age">Age: {this.state.matchData[this.state.id].age}</h3>
-              <h3 id="match_bio">Bio: {this.state.matchData[this.state.id].bio}</h3>
+      <div id="match-card">
+              <img id="match_profile" alt="match profile" src={this.state.matches[this.state.index].img} />
+              <h2 id="match_name">{this.state.matches[this.state.index].name}</h2>
+              <h3 id="match_age">Age: {this.state.matches[this.state.index].age}</h3>
+              <h3 id="match_bio">Bio: {this.state.matches[this.state.index].bio}</h3>
               <img id="phone_icon" alt="phone" src="https://img.icons8.com/color/48/000000/phone.png" />
-              <h4 id="match_contact">Contact them at: <span>{this.state.matchData[this.state.id].phone}!</span></h4>
+              <h4 id="match_contact">Contact them at: <span>{this.state.matches[this.state.index].phone}!</span></h4>
               <img id="marker_icon" alt="marker" src="https://img.icons8.com/office/30/000000/marker.png" />
-              <h4 id="match_distance"><span>{this.state.matchData[this.state.id].distance_in_miles}.0</span> Miles Away! Grab Lunch!</h4> 
-              <button onClick={e => this.next()}>Next Buddy</button>
+              <h4 id="match_distance"><span>{this.state.matches[this.state.index].distance_in_miles}.0</span> Miles Away! Grab Lunch!</h4> 
+              <button onClick={e => this.nextMatch()}>Next Buddy</button>
             </div> 
             :
             <div id="user-card">
               <img src={this.props.auth.img} />
               <h2>Welcome to LunchBuddy, <br /> <span>{this.props.auth.name}</span>!</h2>
               <h3>We wish you a nice meal and a new friend!</h3>
-              <button id="buddy_button" onClick={e => this.matchUsers()}>Buddy Up!</button>
+              <button id="buddy_button" onClick={e => this.findUsers()}>Buddy Up!</button>
             </div> 
             
             }

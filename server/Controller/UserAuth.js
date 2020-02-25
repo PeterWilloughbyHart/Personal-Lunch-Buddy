@@ -61,7 +61,6 @@ const login = async (req, res) => {
 // Keep session on refresh //
 
 const getsession = (req, res) => {
-    console.log("req is", req.session.user)
     res.json(req.session.user);
 }
 

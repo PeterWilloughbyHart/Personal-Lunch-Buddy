@@ -13,6 +13,6 @@ WHERE user_location.user_id NOT IN ($3) AND ROUND(69* DEGREES(ACOS(COS(RADIANS(l
                 * COS(RADIANS(lat))
                 * COS(RADIANS(longpoint) - RADIANS(lng))
                 + SIN(RADIANS(latpoint))
-                * SIN(RADIANS(lat))))) < 15
+                * SIN(RADIANS(lat))))) < 25
 ORDER BY RANDOM()
-LIMIT 5
+LIMIT 10
