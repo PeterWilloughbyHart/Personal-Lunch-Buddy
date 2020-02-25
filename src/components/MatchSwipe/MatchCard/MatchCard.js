@@ -10,7 +10,7 @@ const MatchCard = ({state, nextMatch}) => {
               <img id="phone_icon" alt="phone" src="https://img.icons8.com/color/48/000000/phone.png" />
               <h4 id="match_contact">Contact them at: <span>{state.matches[state.index].phone}!</span></h4>
               <img id="marker_icon" alt="marker" src="https://img.icons8.com/office/30/000000/marker.png" />
-              <h4 id="match_distance"><span>{state.matches[state.index].distance_in_miles}.0</span> Miles Away! Grab Lunch!</h4> 
+              <h4 id="match_distance"><span>{state.matches[state.index].distance_in_miles.toFixed(1)}</span> Miles Away! Grab Lunch!</h4> 
               <button onClick={e => nextMatch()}>Next Buddy</button>
         </div> 
     )

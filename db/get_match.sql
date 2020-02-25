@@ -1,5 +1,5 @@
 SELECT *,
-      ROUND(69* DEGREES(ACOS(COS(RADIANS(latpoint))
+      (69* DEGREES(ACOS(COS(RADIANS(latpoint))
                 * COS(RADIANS(lat))
                 * COS(RADIANS(longpoint) - RADIANS(lng))
                 + SIN(RADIANS(latpoint))
